@@ -1,0 +1,10 @@
+.products-advantages
+    .item-container
+        @apply relative flex-center flex-col gap-4 md:gap-5 px-4 lg:px-6
+
+        &:nth-child(3n + 1),
+        &:nth-child(3n + 2)
+            .item-text
+                &::after
+                    content: ""
+                    @apply hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-0.25 h-36 bg-primary-3

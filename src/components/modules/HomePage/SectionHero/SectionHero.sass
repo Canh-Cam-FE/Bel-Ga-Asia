@@ -1,0 +1,31 @@
+.section-home-hero
+
+    &-video
+        @apply relative w-full aspect-video overflow-hidden
+
+        video
+            @apply w-full h-full object-cover block
+
+        &::after
+            content: ""
+            @apply absolute left-0 right-0 bottom-0 pointer-events-none
+            @apply h-[clamp(100px,12vw,220px)] bg-[linear-gradient(180deg,_rgba(252,248,236,0)_0%,_#FCF8EC_100%)]
+
+    &-content
+        @apply text-center
+        @apply -mt-24 md:-mt-32 lg:-mt-60
+        @apply relative z-10
+        @apply pb-10 lg:pb-16
+
+    &-title
+        @apply font-goldman uppercase text-primary-2
+        @apply text-xl md:text-3xl lg:text-[3.5rem]
+        @apply leading-[1.15]
+        @apply max-w-[1200px] mx-auto
+
+    &-icon
+        @apply flex justify-center
+        @apply mt-6
+
+        i
+            @apply text-primary-3

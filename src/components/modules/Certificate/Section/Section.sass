@@ -1,0 +1,155 @@
+.certificate-section
+    .certification-box
+        @apply flex flex-col gap-10 px-10 py-12
+        @apply bg-[rgba(255,255,255,0.75)] border border-white rounded-10 shadow-[0_12px_30px_#FFF4DD]
+
+    .certification-sidebar
+        @apply w-[220px] shrink-0
+        @apply flex flex-col gap-5
+
+    .certification-logo
+        @apply w-[220px] aspect-square overflow-hidden
+
+        .img
+            @apply w-full h-full
+
+    .certification-year
+        @apply h-[54px] rounded-lg bg-primary-1
+        @apply flex-center
+
+    .certification-content
+        @apply flex-1 min-w-0
+
+    .certification-intro
+        @apply flex flex-col
+
+    .certification-heading
+        @apply m-0
+
+    .certification-line
+        @apply w-full h-0.25 bg-[#F6A800] mt-3 mb-4
+
+    .certification-desc
+        @apply max-w-none
+
+        p
+            @apply m-0 leading-[1.45]
+
+    .certification-subheading
+        @apply m-0
+
+    .certification-focus
+        @apply mt-5
+
+    .certification-focus-list
+        @apply grid grid-cols-6 gap-5 mt-7
+
+    .certification-focus-item
+        @apply flex flex-col items-center gap-4 text-center
+
+    .certification-icon
+        @apply flex-center
+        @apply text-[#F6A800]
+
+        .material-symbols-outlined
+            @apply text-[48px] leading-none
+
+    .certification-item-title
+        @apply leading-[1.25]
+
+    .certification-benefits
+        @apply mt-10
+
+    .certification-benefit-list
+        @apply grid grid-cols-5 mt-7
+
+    .certification-benefit-item
+        @apply px-5
+        @apply flex flex-col gap-7
+
+        &:first-child
+            @apply pl-0
+
+        &:last-child
+            @apply pr-0
+
+        &:not(:last-child)
+            @apply border-r border-primary-1
+
+    .certification-benefit-content
+        @apply flex flex-col gap-3
+
+    .certification-benefit-item
+        .certification-icon
+            @apply min-h-[48px]
+
+    .certification-item-desc
+        @apply m-0 leading-[1.4] text-justify
+
+    @media (max-width: 1199px)
+        .certification-wrapper
+            @apply p-7 gap-7 rounded-[32px]
+
+        .certification-sidebar
+            @apply w-[180px]
+
+        .certification-logo
+            @apply w-[180px]
+
+        .certification-focus-list
+            @apply grid-cols-3 gap-y-8
+
+        .certification-benefit-list
+            @apply grid-cols-3 gap-y-8
+
+        .certification-benefit-item
+            &:nth-child(3)
+                @apply border-r-0
+
+            &:nth-child(4)
+                @apply pl-0
+
+            &:nth-child(5)
+                @apply border-r-0
+
+    @media (max-width: 767px)
+        .certification-wrapper
+            @apply flex-col p-5 gap-6 rounded-[24px]
+
+        .certification-sidebar
+            @apply w-full flex-row items-center gap-4
+
+        .certification-logo
+            @apply w-[120px] shrink-0
+
+        .certification-year
+            @apply flex-1 h-[48px]
+
+        .certification-focus
+            @apply mt-7
+
+        .certification-focus-list
+            @apply grid-cols-2 gap-x-4 gap-y-7 mt-5
+
+        .certification-icon
+            .material-symbols-outlined
+                @apply text-[40px]
+
+        .certification-benefits
+            @apply mt-8
+
+        .certification-benefit-list
+            @apply grid-cols-1 gap-6 mt-5
+
+        .certification-benefit-item
+            @apply px-0 pb-6 border-r-0 border-b border-primary-1
+
+            &:last-child
+                @apply pb-0 border-b-0
+
+        .certification-benefit-item
+            .certification-icon
+                @apply min-h-0
+
+        .certification-item-desc
+            @apply text-left

@@ -1,0 +1,52 @@
+.section-news
+    @apply overflow-hidden
+
+    .item
+        @apply relative inline-flex items-center pb-2 body-3 text-primary-1 whitespace-nowrap cursor-pointer
+        @apply transition-all duration-300
+
+        &::after
+            content: ""
+            @apply absolute left-0 bottom-0 opacity-0 w-full h-0.5 bg-primary-4 transition-all duration-300
+
+        &:hover,
+        &.active
+            @apply text-primary-3 font-medium
+
+            &::after
+                @apply opacity-100
+
+    .img
+        @apply w-full h-full object-cover transition duration-300
+
+        &:hover
+            @apply scale-105
+
+    .card-content
+        @apply flex flex-col flex-1 gap-3 p-4 lg:px-8 lg:py-5
+
+        &:hover
+            .card-title
+                @apply text-primary-3
+
+        .news-meta
+            @apply relative flex items-center gap-3 pb-3
+
+            &::after
+                content: ""
+                @apply absolute bottom-0 block w-full h-0.25 bg-primary-4
+
+            .country
+                @apply body-3 text-primary-1
+
+            .date
+                @apply relative pl-2 body-4 text-Utility-gray-500
+
+                &::before
+                    content: ""
+                    @apply absolute left-0 top-1/2 -translate-y-1/2
+                    @apply w-0.25 h-5 bg-[#DCDCDC]
+
+        .card-title
+            @apply flex-1 heading-3 text-primary-1 font-bold
+            @apply transition-all duration-300

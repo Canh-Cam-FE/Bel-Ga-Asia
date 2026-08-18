@@ -1,0 +1,93 @@
+.btn
+    @apply cursor-pointer select-none transition-all duration-300
+    &.loading
+        @apply bg-transparent #{!important}
+        span,.icon
+            @apply opacity-0
+        &::before
+            content: ''
+            animation-duration: 0.5s
+            @apply w-5 h-5 border-3 border-white/40 border-t-white rounded-full inline-block
+            @apply absolute animate-spin
+
+    .btn-scroll
+        @apply relative w-6 h-10 rounded-8
+        @apply flex justify-center bg-transparent border-none outline outline-1 outline-primary-3 shadow-1
+        .scroll
+            @apply w-2 h-2 rounded-1 bg-primary-3
+            @apply translate-y-[60%] btn-scroll-animation
+
+    .btn-discover
+        @apply relative flex-center p-1 rounded-full border-2 border-primary-3 bg-transparent
+        @apply transition-all duration-300 ease-in-out
+
+        &__text
+            @apply relative flex-center mx-2 whitespace-nowrap
+            @apply heading-5 text-primary-3 font-bold
+            @apply transition-all duration-300 ease-in-out
+
+        &__icon
+            @apply relative w-13 h-13 flex-center shrink-0 rounded-full bg-primary-3 text-Utility-white
+            @apply transition-all duration-300 ease-in-out
+
+        &:hover
+            @apply bg-primary-3
+
+            .btn-discover__text
+                @apply text-Utility-white
+
+            .btn-discover__icon
+                @apply bg-primary-4 text-primary-3
+
+.btn-search
+    @apply relative px-3.75 py-2.25 flex-center rounded-5 border border-primary-3
+    @apply text-xl text-primary-3 font-awesome
+    @apply transition-all duration-300
+
+    &:hover
+        @apply bg-primary-3 text-Utility-white
+
+.btn-language
+    @apply relative px-4 py-2.25 flex-center gap-1 rounded-5 border border-Utility-black
+    @apply body-3 text-Utility-black font-primary
+    @apply transition-all duration-300
+
+    &:hover
+        @apply bg-Utility-black/50 text-Utility-white
+
+.btn-arrow
+    @apply relative block w-13 h-13 m-0 overflow-hidden border-0 bg-transparent cursor-pointer
+
+    &::before,
+    &::after
+        content: ''
+        @apply absolute inset-2 rounded-full z-0
+
+    &::before
+        @apply border border-primary-1 btn-arrow-before-transition
+
+    &::after
+        @apply border-2 border-primary-3 bg-primary-3 opacity-0 scale-120 btn-arrow-after-transition
+
+    &:hover,
+    &:focus
+        &::before
+            @apply opacity-0 scale-90 btn-arrow-after-transition
+
+        &::after
+            @apply opacity-100 scale-100 btn-arrow-before-transition
+
+        .btn-arrow-box
+            @apply -translate-x-13
+
+        .material-symbols-outlined
+            @apply text-primary-4
+
+    &-box
+        @apply absolute top-0 left-0 flex z-1 btn-arrow-box-transition
+
+    &-element
+        @apply flex-center w-13 h-13 shrink-0
+
+        .material-symbols-outlined
+            @apply text-primary-1 leading-none rotate-180 transition-colors duration-300 z-2

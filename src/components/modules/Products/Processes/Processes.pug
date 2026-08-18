@@ -1,0 +1,69 @@
+section.products-processes
+    .container
+        .section-wrapper(class="flex-center flex-col gap-10")
+            .section-title(class="flex-center flex-col gap-6")
+                .section-heading
+                    h2.heading
+                        .text(class="heading-1-subpage text-primary-4 text-center font-bold")
+                            | FROM GENETICS TO PREMIUM-QUALITY CHICKS
+                .section-desc
+                    p.desc
+                        .text(class="body-1 text-Utility-gray-950")
+                            | Excellence begins with world-class genetics and a carefully managed breeding program. From breeder farms to hatcheries, every stage of production is guided by a fully integrated system, strict biosecurity standards, rigorous quality control, and advanced technology to ensure consistent results. Continuous innovation and technical expertise enable the delivery of healthy, uniform, and high-performance chicks that meet the highest industry standards. Trusted by poultry producers across Asia, Bel Ga Asia remains committed to delivering reliable solutions that support sustainable growth and long-term success.
+
+
+            .section-content(class="relative")
+                .processes-list(class="w-full flex items-start justify-between gap-4")
+                    -
+                        const processes = [
+                            {
+                                icon: './img/icon-genetics.svg',
+                                title: 'GENETICS',
+                                desc: 'World-class genetics sourced from trusted global breeding companies'
+                            },
+                            {
+                                icon: './img/icon-parent-stock-farms.svg',
+                                title: 'PARENT STOCK FARMS',
+                                desc: 'Healthy breeder flocks managed under strict biosecurity standards'
+                            },
+                            {
+                                icon: './img/icon-quality-hatching-eggs.svg',
+                                title: 'QUALITY HATCHING EGGS',
+                                desc: 'Carefully selected and monitored eggs for optimal hatchability'
+                            },
+                            {
+                                icon: './img/icon-hatcheries.svg',
+                                title: 'STATE-OF-THE-ART HATCHERIES',
+                                desc: 'Advanced incubation technology and strict quality control'
+                            },
+                            {
+                                icon: './img/icon-premium-chicks.svg',
+                                title: 'PREMIUM CHICKS',
+                                desc: 'Healthy, uniform and high-performance chicks delivered with care'
+                            },
+                            {
+                                icon: './img/icon-customer-farms.svg',
+                                title: 'CUSTOMER FARMS',
+                                desc: 'Delivered to farms across Asia with dedicated support'
+                            }
+                        ]
+
+                    each process, index in processes
+                        .process-item(class="relative min-w-0 flex-center flex-1 flex-col")
+                            .process-top(class="w-full flex items-center gap-4 mb-4")
+                                .process-icon(class="w-1/2 shrink-0 mx-auto rounded-full bg-white overflow-hidden")
+                                    .img(class="img-ratio aspect-square")
+                                        +PugImg()
+
+
+                            .process-content(class="w-full text-center")
+                                h3.process-title(class="font-bold text-primary-4 uppercase")
+                                    | #{process.title}
+
+                                p.process-desc(class="body-2 text-Utility-gray-950")
+                                    | #{process.desc}
+
+                            if index < processes.length - 1
+                                .process-arrow(class="absolute top-1/4 -translate-y-1/2 -right-5 flex-center shrink-0 text-primary-3 font-black")
+                                    span.material-symbols-outlined
+                                        | arrow_forward

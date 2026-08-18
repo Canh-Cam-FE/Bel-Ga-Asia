@@ -1,0 +1,27 @@
+-
+    const overviewStats = [
+        { number: '14', title: 'Years of Service', desc: 'Delivering quality chicks across Asia since our founding.' },
+        { number: '03', title: 'Countries', desc: 'Operating in Vietnam, Myanmar, and Cambodia.' },
+        { number: '05', title: 'State-of-the-Art Facilities', desc: 'Modern hatcheries equipped with advanced technology.' },
+        { number: '11', title: 'Distributors Worldwide', desc: 'A trusted network serving poultry farmers globally.' },
+    ]
+section.section-overview.section-py
+    .container
+        h2.home-heading Overview
+        .row
+            .col(class="lg:w-5/12")
+                .section-overview-stats
+                    each stat in overviewStats
+                        .section-overview-stat
+                            .section-overview-number= stat.number
+                            .section-overview-info
+                                h3.section-overview-stat-title= stat.title
+                                p.section-overview-stat-desc= stat.desc
+                .mt-10
+                    a.btn-home(href="#")
+                        span Learn More
+                        .btn-home-icon
+                            i.fa-light.fa-plus
+            .col(class="lg:w-7/12")
+                .section-overview-map.img-ratio.ratio-4-3
+                    +PugImg(class="")

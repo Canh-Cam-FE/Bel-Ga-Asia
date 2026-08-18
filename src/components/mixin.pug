@@ -1,0 +1,141 @@
+mixin subscribeForm()
+    .subscribe
+        .subscribefrm
+            input.subscribeemail(type="text" placeholder="Nhập email của bạn...")
+            button.subscribebutton Gửi
+mixin PugImg(url="./img/1.jpg")
+    img(data-src=url, alt="" class="lozad " + attributes.class)
+mixin btnViewAll(text="Xem thêm")
+    a(href="" x-link class='btn-primary-2 btn ' + attributes.class)
+        span=text
+        img(src=imgButton, alt="" class="w-5 h-5 svg")
+mixin HeaderLanguageVertical()
+    ul 
+        li.wpml-ls-item
+            a(href="") 
+                span.wpml-ls-native VN
+        ul 
+            li 
+                a(href="") 
+                    span EN
+mixin HeaderLanguageHorizontal()
+    ul 
+        li.wpml-ls-item
+            a(href="") 
+                span.wpml-ls-native VN
+        li.wpml-ls-item
+            a(href="") 
+                span.wpml-ls-native VN
+mixin BtnPrimary(text="")
+    a(href="" class='btn-primary btn ' + attributes.class)
+        span=text
+
+mixin HeaderMenu(menu = [], className = '')
+    .header-menu(class=className)
+        ul
+            each item in menu
+                li.menu-item-has-children
+                    a.header-link(href="")= item
+
+
+
+mixin HeaderLanguage()
+    .header-language 
+        .header-language-active
+            ul 
+                li.wpml-ls-current-language
+                    a(href="") 
+                        span.wpml-ls-native EN
+                ul 
+                    li 
+                        a(href="") 
+                            span EN
+        //- .header-language-list
+        //-     ul 
+        //-         li.wpml-ls-current-language
+        //-             a(href="") 
+        //-                 span.wpml-ls-native VN
+        //-         ul 
+        //-             li 
+        //-                 a(href="") 
+        //-                     span EN
+
+
+mixin ArrowButton()
+    .btn.btn-arrow(class="" + attributes.class)
+        .btn-arrow-box
+            .btn-arrow-element
+                span.material-symbols-outlined line_end_arrow_notch
+
+            .btn-arrow-element
+                span.material-symbols-outlined line_end_arrow_notch
+
+
+mixin IconBox(icon, title, desc)
+    .box-item
+        .box-icon
+            span.material-symbols-outlined #{icon}
+        .box-content.w-full.flex.flex-col.gap-3
+            h2.box-title.heading-4.text-primary-2.font-bold.text-center.uppercase= title
+            p.box-desc.body-2.text-Utility-gray-950.text-center= desc
+
+
+mixin Badge(icon, text)
+    span.badge(class='badge ' + (attributes.class || ''))
+        span.badge-icon
+            i(class=`fa-light ${icon}`)
+        span.badge-text= text
+
+mixin ButtonMore(text="DISCOVER MORE")
+    .btn.text-center
+        .btn-discover(href="#")
+            span.btn-discover__text #{text}
+
+            span.btn-discover__icon
+                span.material-symbols-outlined line_end_arrow_notch
+
+
+mixin ProductCard(product)
+    .product-card
+        .card-header(class="md:rem:min-h-[380px] lg:min-h-0 xl:rem:min-h-[380px] flex flex-col items-center md:items-stretch gap-6 flex-1 md:block -md:relative")
+            .card-text(class="flex flex-col gap-4 items-center text-center md:items-start md:text-left md:relative md:w-[55%] z-1")
+                +Badge(product.tagIcon, product.tag)
+                .card-info(class="flex flex-col gap-4 items-center md:items-start")
+                    h3.card-title.heading-2.text-primary-3.font-bold= product.title
+                    p.card-desc.body-2.text-Utility-gray-950= product.desc
+            .card-img(class="w-full md:w-1/2 flex justify-center md:justify-end md:absolute md:top-12 lg:top-28 xl:top-12 md:right-0 z-0")
+                .img-wrapper
+                    .img(class="ratio aspect-square")
+                        +PugImg("./img/2.png")(class="w-full h-full object-contain")
+
+        .card-content
+            .card-features(class="grid grid-cols-2 gap-4 md:grid-cols-4 md:mt-4 lg:mt-0 ")
+                each feature in product.features
+                    .card-feature(class="flex flex-col items-center text-center gap-3 px-2")
+                        .card-feature-icon
+                            span.material-symbols-outlined.heading-1= feature.icon
+
+                        p.body-2.text-center= feature.label
+
+        .card-button.flex-center
+            +ButtonMore()
+
+
+mixin PageBanner(title)
+    .page-banner(class="relative")
+        .swiper-container.swiper-column-auto.allow-touchMove(class="relative w-full")
+            .swiper
+                .swiper-wrapper
+                    -for(i=0;i<4;i++)
+                        .swiper-slide.item
+                            .item-img
+                                .img-wrapper
+                                    .img(class="img-ratio ratio:pt-[800_1920]")
+                                        +PugImg()
+
+        .title-wrapper
+            .page-title
+                h1.title
+                    .text(class="heading-1 text-primary-1 text-center font-bold font-primary")
+                        = title
+

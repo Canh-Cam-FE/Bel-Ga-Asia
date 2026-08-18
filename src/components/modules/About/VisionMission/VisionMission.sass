@@ -1,0 +1,57 @@
+.about-vision-mission
+    .item-box
+        @apply absolute flex-center flex-col px-4 md:px-8 lg:px-16 py-4 md:py-10 z-4
+        @apply bg-[rgba(255,255,255,0.10)] border border-[rgba(255,255,255,0.30)] rounded-5
+        @apply opacity-0 invisible pointer-events-none backdrop-blur-xl
+        @apply transition-all duration-300
+
+    .section-content
+        background-image: url("/img/1.jpg")
+        @apply relative w-full rem:min-h-[440px] inline-flex items-stretch xs:flex-col lg:flex-row bg-cover bg-center
+        @apply transition-[background-image] duration-300
+
+        &::before
+            content: ""
+            @apply absolute inset-0 z-1 bg-black/0 pointer-events-none
+            @apply transition-all duration-300
+
+        &.is-hover
+            &::before
+                @apply bg-black/45
+
+        .item
+            @apply relative w-full lg:w-1/2 flex flex-col px-4 md:px-8 lg:px-16 py-4 md:py-5 z-2 overflow-hidden
+            // @apply bg-[rgba(255,255,255,0.10)]
+            @apply transition-all duration-300
+
+            .item-content
+                @apply relative w-full h-full flex flex-col justify-start items-center
+
+            &.is-active
+                > .item-content > .item-title
+                    @apply opacity-0
+
+                .item-box
+                    @apply opacity-100 visible pointer-events-auto
+
+            // Vision
+            &:first-child
+                .item-box
+                    .item-title
+                        .text
+                            @apply text-primary-4
+
+            // Mission
+            &:last-child
+                .item-box
+                    .item-title
+                        .text
+                            @apply text-primary-1
+
+    .item-content > .item-title
+        @apply relative w-full flex-center my-10 opacity-100 z-3
+        @apply transition-all duration-300
+
+        &::before
+            content: ""
+            @apply absolute -bottom-4 w-[7.2%] h-0.25 bg-white

@@ -1,0 +1,63 @@
+-
+    const newsItems = [
+        {
+            image: "./img/news-1.jpg",
+            country: "Vietnam",
+            date: "May 22, 2026",
+            title: "Bel Gà, De Heus, TTC Energy and Hung Nhon - Join Forces to Scales Up Solar Energy Development",
+        },
+        {
+            image: "./img/news-2.jpg",
+            country: "Cambodia",
+            date: "May 22, 2026",
+            title: "Grand Opening - Thmey Khmer Hatchery",
+        },
+        {
+            image: "./img/news-3.jpg",
+            country: "Vietnam",
+            date: "May 22, 2026",
+            title: "Internal Opening Ceremony of Tay Ninh Hatchery Extension",
+        },
+    ]
+
+section.section-news.pb-20
+    .container.relative.flex.flex-col.gap-10
+        .section-header.flex.flex-col.gap-10
+            h1.section-title.home-heading NEWS
+            .category
+                ul.category-list.flex-center.flex-wrap.gap-5
+                    each item, i in ['All', 'Vietnam', 'Cambodia', 'Myanmar']
+                        li.list-item.flex.items-center
+                            a.item(class=i===0 ? 'active' : '')= item
+
+        .section-news-slider.swiper-column-auto.auto-3-column.allow-touchMove(class=`swiper-column-auto-id-1`)
+            .swiper
+                .swiper-wrapper
+                    each item in newsItems
+                        .swiper-slide
+                            .news-card.h-full.flex.flex-col.bg-Utility-white.rounded-5.overflow-hidden
+                                .card-img
+                                    .img-wrapper.overflow-hidden
+                                        .img(class="img-ratio ratio:pt-[280_440]")
+                                            +PugImg()
+
+                                .card-content
+                                    .news-meta
+                                        p.country= item.country
+                                        p.date= item.date
+
+                                    h2.card-title= item.title
+
+                                    a.section-news-link(href="#")
+                                        span Read more
+                                        i.fa-light.fa-arrow-right
+
+            .swiper-button-wrapper
+                .btn-prev
+                    +ArrowButton()
+                .btn-next
+                    +ArrowButton()(class="rotate-180")
+
+
+    .btn.flex-center.text-center.mt-12
+        +ButtonMore("VIEW ALL")

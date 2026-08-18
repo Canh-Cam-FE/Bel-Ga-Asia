@@ -1,0 +1,171 @@
+section.certificate-section
+    .container
+        .section-wrapper(class="flex-center flex-col gap-10")
+            .section-title(class="flex-center flex-col gap-6")
+                .section-heading
+                    h2.heading
+                        .text(class="heading-1-subpage text-primary-4 text-center font-bold")
+                            | Our Certificates
+
+            .section-content
+                .certification-box
+                    .box-upper(class="w-full flex gap-10")
+                        .box-upper-left(class="w-[15.714%] flex flex-col gap-5")
+                            .logo
+                                .img-wrapper
+                                    .img(class="img-ratio aspect-square")
+                                        +PugImg()
+
+                            .certification-year
+                                .text(class="heading-4 text-white font-bold")
+                                    | 2024 to Now
+
+                        .box-upper-right(class="flex flex-col gap-4")
+                            .box-title(class="border-b border-primary-4 pb-4 mb-4")
+                                h2.title
+                                    .text(class="heading-2 text-primary-1 font-bold")
+                                        | GLOBAL SMART LIVESTOCK PRACTICES (GLOBAL S.L.P)
+                            .box-desc
+                                p.desc
+                                    .text(class="body-2 text-Utility-gray-950")
+                                        span(class="font-bold") GLOBAL S.L.P
+                                        |  is an internationally recognized certification that promotes safe
+                            .box-item-title
+                                h3.item-title
+                                    .text(class="heading-3 text-primary-3 font-bold")
+                                        | KEY FOCUS AREAS
+                            .box-item-item(class="flex gap-5")
+                                -for(i=0;i<6;i++)
+                                    .item(class="w-[15%]")
+                                        .img-wrapper
+                                            .img(class="img-ratio aspect-square")
+                                                +PugImg()
+
+                    .box-lower(class="")
+                        h3.features-title
+                            .text(class="heading-3 text-primary-3 font-bold")
+                                | WHAT GLOBAL S.L.P. MEANS FOR OUR CUSTOMERS
+
+
+                        .section-content
+                            .grid(class="grid-cols-1 sm:grid-cols-2 lg:grid-cols-5")
+                                -for(i=0;i<5;i++)
+                                    .item-container
+                                        .item-img(class="w-[45%]")
+                                            .img(class="img-ratio aspect-square")
+                                                +PugImg()
+                                        .item-text(class="flex-center flex-col gap-3")
+                                            h3.text-title
+                                                .text(class="heading-4 text-primary-3 font-bold")
+                                                    | Quality
+                                            p.text-desc
+                                                .text(class="body-2 text-Utility-gray-950 text-justify")
+                                                    | We are committed to delivering consistent superior quality Day Old Chicks and Day Old Layers across Asia.
+
+
+                        //- .certification-content
+                        //-     .certification-intro
+                        //-         h2.certification-heading
+                        //-             .text(class="heading-1-subpage text-primary-4 font-bold uppercase")
+                        //-                 | GLOBAL SMART LIVESTOCK PRACTICES (GLOBAL S.L.P.)
+
+                        //-         .certification-line
+
+                        //-         .certification-desc
+                        //-             p(class="body-1 text-Utility-gray-950")
+                        //-                 strong GLOBAL S.L.P.
+                        //-                 |  is an internationally recognized certification that promotes safe, sustainable, and responsible production through food safety, biosecurity, environmental responsibility, animal health & welfare, worker health & safety, traceability, and continuous improvement. It applies specifically to livestock production.
+
+                        //- .certification-focus
+                        //-     h3.certification-subheading
+                        //-         .text(class="heading-3 text-primary-1 font-bold uppercase")
+                        //-             | KEY FOCUS AREAS
+
+                        //-     .certification-focus-list
+                        //-         -
+                        //-             const focusAreas = [
+                        //-                 {
+                        //-                     icon: 'cruelty_free',
+                        //-                     title: 'Animal Welfare'
+                        //-                 },
+                        //-                 {
+                        //-                     icon: 'shield',
+                        //-                     title: 'Biosecurity'
+                        //-                 },
+                        //-                 {
+                        //-                     icon: 'search',
+                        //-                     title: 'Traceability'
+                        //-                 },
+                        //-                 {
+                        //-                     icon: 'assignment_turned_in',
+                        //-                     title: 'Responsible Farm Management'
+                        //-                 },
+                        //-                 {
+                        //-                     icon: 'eco',
+                        //-                     title: 'Sustainable Livestock Practices'
+                        //-                 },
+                        //-                 {
+                        //-                     icon: 'query_stats',
+                        //-                     title: 'Continuous Improvement'
+                        //-                 }
+                        //-             ]
+
+                        //-         each item in focusAreas
+                        //-             .certification-focus-item
+                        //-                 .certification-icon
+                        //-                     span.material-symbols-outlined
+                        //-                         = item.icon
+
+                        //-                 .certification-item-title
+                        //-                     .text(class="body-2 text-primary-4 font-bold text-center")
+                        //-                         = item.title
+
+                        //- .certification-benefits
+                        //-     h3.certification-subheading
+                        //-         .text(class="heading-3 text-primary-1 font-bold uppercase")
+                        //-             | WHAT GLOBAL S.L.P. MEANS FOR OUR CUSTOMERS
+
+                        //-     .certification-benefit-list
+                        //-         -
+                        //-             const benefits = [
+                        //-                 {
+                        //-                     icon: 'workspace_premium',
+                        //-                     title: 'Consistent Product Quality',
+                        //-                     desc: 'Standardized production practices help ensure reliable and consistent chick quality in every delivery'
+                        //-                 },
+                        //-                 {
+                        //-                     icon: 'egg_alt',
+                        //-                     title: 'Healthier Chicks',
+                        //-                     desc: 'Strong biosecurity and responsible livestock practices contribute to healthier chicks with a better start'
+                        //-                 },
+                        //-                 {
+                        //-                     icon: 'travel_explore',
+                        //-                     title: 'Greater Traceability',
+                        //-                     desc: 'A controlled production system provides transparency and traceability throughout the production process'
+                        //-                 },
+                        //-                 {
+                        //-                     icon: 'volunteer_activism',
+                        //-                     title: 'Responsible Production',
+                        //-                     desc: 'Customers can be confident that their chicks are produced under internationally recognized standards for animal welfare and responsible farming.'
+                        //-                 },
+                        //-                 {
+                        //-                     icon: 'verified_user',
+                        //-                     title: 'Long-Term Reliability',
+                        //-                     desc: 'Continuous improvement and regular audits help maintain high operational standards and strengthen customer confidence'
+                        //-                 }
+                        //-             ]
+
+                        //-         each item, index in benefits
+                        //-             .certification-benefit-item
+                        //-                 .certification-icon
+                        //-                     span.material-symbols-outlined
+                        //-                         = item.icon
+
+                        //-                 .certification-benefit-content
+                        //-                     h4.certification-item-title
+                        //-                         .text(class="body-2 text-primary-4 font-bold")
+                        //-                             = item.title
+
+                        //-                     p.certification-item-desc
+                        //-                         .text(class="body-2 text-Utility-gray-950")
+                        //-                             = item.desc

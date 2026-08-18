@@ -1,0 +1,27 @@
+-
+    const qualityItems = [
+        { icon: 'verified_user', title: 'BIOSECUTITY', desc: 'Implemented higher standards to guarantee healthy and strong Day- Old Chicks' },
+        { icon: 'diversity_2', title: 'PROFESSIONAL SUPPORT', desc: 'Experienced local teams supporting customer success' },
+        { icon: 'genetics', title: 'Quality Assurance', desc: 'Continuous monitoring to ensure chick health and vitality.' },
+        { icon: 'egg', title: 'Efficient Delivery', desc: 'Timely delivery to farms across Southeast Asia.' },
+        { icon: 'science', title: 'Laboratory Testing', desc: 'Advanced testing for disease-free, healthy chicks.' },
+        { icon: 'thermostat', title: 'Climate Control', desc: 'Optimal hatching conditions for maximum hatchability.' },
+        { icon: 'volunteer_activism', title: 'Animal Welfare', desc: 'Committed to humane and ethical livestock practices.' },
+        { icon: 'groups', title: 'Expert Support', desc: 'Dedicated technical team for customer success.' },
+    ]
+section.homepage-section-quality
+    .container(class="flex-center flex-col gap-6 lg:gap-13")
+        .header-title.max-w-screen-xl.flex-center.flex-col.gap-6
+            h2.home-heading Quality Chicks, Healthy Life
+            p.body-1.text-utility-gray-950.text-center At 
+                span.body-1.text-primary-1 Bel Ga Asia,
+                | we provide premium quality Day-Old-Chicks and Day-Old-Layers 
+                | and integrated solutions that help farms across Asia maximize productivity and performance
+        .content(class="flex-center flex-col gap-4 lg:gap-9")
+            .grid(class="grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-y-4 lg:gap-y-10")
+                each item in qualityItems
+                    .item-wrapper.flex
+                        +IconBox(item.icon, item.title, item.desc)
+
+            .btn.text-center
+                +ButtonMore()

@@ -1,0 +1,90 @@
+section.about-history
+    .container
+        .section-wrapper(class="flex-center flex-col gap-4 md:gap-10")
+            .section-title
+                h2.title
+                    .text(class="heading-1-subpage text-primary-4 font-bold uppercase")
+                        | Core Values
+                p.desc
+                    .text(class="body-1 text-Utility-gray-950")
+                        | Driven by innovation, quality, and sustainability, Bel Ga Asia has continuously evolved to support the growth of the poultry industry.
+
+            .section-content
+                .history-swiper.swiper-column-auto
+                    .swiper
+                        .swiper-wrapper
+                            -
+                                const history = [
+                                    {
+                                        year: '2013',
+                                        position: 'top',
+                                        title: 'Bel Gà Vietnam established',
+                                        items: [
+                                            'Loc Son Hatchery',
+                                            'Loc Quang PS Farm'
+                                        ]
+                                    },
+                                    {
+                                        year: '2015',
+                                        position: 'bottom',
+                                        items: [
+                                            'Loc Lam PS Farm'
+                                        ]
+                                    },
+                                    {
+                                        year: '2017',
+                                        position: 'top',
+                                        title: 'Bel Ga Myanmar established',
+                                        items: []
+                                    },
+                                    {
+                                        year: '2018',
+                                        position: 'bottom',
+                                        items: [
+                                            'Myaung Dakar Hatchery',
+                                            'Loc Tan PS Farm'
+                                        ]
+                                    },
+                                    {
+                                        year: '2019',
+                                        position: 'top',
+                                        items: [
+                                            'Bago 1 PS Farm'
+                                        ]
+                                    },
+                                    {
+                                        year: '2020',
+                                        position: 'bottom',
+                                        items: [
+                                            'Tan Phuc PS Farm'
+                                        ]
+                                    },
+                                    {
+                                        year: '2021',
+                                        position: 'top',
+                                        items: [
+                                            'Tay Ninh Hatchery',
+                                            'Bago 2 PS Farm'
+                                        ]
+                                    }
+                                ]
+
+                            each item, index in history
+                                .swiper-slide
+                                    .history-item(class=`is-${item.position}`)
+                                        .history-card
+                                            if item.title
+                                                h3.title
+                                                    | #{item.title}
+
+                                            if item.items.length
+                                                ul.list
+                                                    each content in item.items
+                                                        li
+                                                            | #{content}
+
+                                        .history-year
+                                            | #{item.year}
+
+                        .history-line
+                            .history-progress

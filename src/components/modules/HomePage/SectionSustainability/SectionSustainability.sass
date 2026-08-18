@@ -1,0 +1,250 @@
+.section-sustainability
+    @apply relative
+    @apply overflow-hidden
+    .banner-image
+        @apply relative
+
+        .img
+            @apply relative overflow-hidden pt-[70%] md:pt-[45%]
+
+            img
+                @apply absolute inset-0 w-full h-full object-cover
+                @apply scale-105 transition-all duration-[5s] ease-in-out
+
+    .banner-overlay
+        @apply absolute bottom-0 left-0 w-full h-60 z-2 overflow-hidden
+        @apply bg-[linear-gradient(180deg,_rgba(255,254,250,0.00)_0%,_#FFFEFA_55.63%)]
+
+    &-content
+        @apply py-12 lg:py-20
+
+    &-top
+        @apply flex
+        @apply flex-col
+        @apply lg:flex-row
+        @apply justify-between
+        @apply items-center
+        @apply gap-12
+
+    &-left
+        @apply flex-1
+        @apply text-center
+        @apply lg:text-left
+
+    &-right
+        @apply w-full
+        @apply lg:w-auto
+
+    &-title
+        @apply font-goldman
+        @apply uppercase
+        @apply text-primary-1
+
+        @apply text-3xl
+        @apply md:text-5xl
+        @apply lg:text-[64px]
+
+        @apply leading-[1.05]
+
+    &-text
+        @apply mt-5
+        @apply text-body-text-99
+        @apply text-base
+        @apply lg:text-lg
+
+    &-form
+        @apply w-full
+
+    &-form-wrap
+        @apply flex
+        @apply flex-col
+        @apply md:flex-row
+        @apply gap-4
+        @apply items-center
+
+    &-input
+        @apply flex-1
+
+        @apply h-[56px]
+        @apply px-7
+
+        @apply rounded-full
+
+        @apply border-2
+        @apply border-primary-2
+
+        @apply bg-transparent
+
+        @apply text-white
+        @apply text-base
+
+        @apply outline-none
+
+        @apply transition-all
+        @apply duration-300
+
+        &::placeholder
+            @apply text-[#7A7A7A]
+
+        &:focus
+            @apply border-primary-1
+
+    &-btn
+        @apply shrink-0
+
+        @apply h-[56px]
+        @apply px-9
+
+        @apply rounded-full
+
+        @apply bg-primary-1
+
+        @apply text-primary-6
+        @apply font-semibold
+        @apply uppercase
+        @apply tracking-wider
+
+        @apply transition-all
+        @apply duration-300
+        @apply cursor-pointer
+
+        &:hover
+            @apply brightness-110
+
+    &-divider
+        @apply w-full
+        @apply h-1
+        @apply bg-primary-1
+        @apply my-12
+
+    &-contact
+        @apply flex
+        @apply items-center
+        @apply gap-8
+
+    &-arrow
+        @apply hidden
+        @apply xl:flex
+
+        @apply items-center
+        @apply justify-center
+
+        @apply w-12
+        @apply h-12
+
+        @apply rounded-full
+
+        @apply border
+        @apply border-primary-1
+
+        @apply text-primary-1
+
+        @apply transition-all
+        @apply duration-300
+
+        &:hover
+            @apply bg-primary-1
+            @apply text-primary-6
+
+    &-list
+        @apply flex-1
+        @apply grid
+        @apply grid-cols-1
+        @apply lg:grid-cols-3
+        @apply gap-10
+
+    &-item
+        @apply flex
+        @apply flex-col
+
+    &-country
+        @apply flex
+        @apply justify-center
+        @apply mb-8
+
+        img
+            @apply h-12
+            @apply object-contain
+
+    &-info
+        @apply flex
+        @apply flex-col
+        @apply gap-6
+
+        li
+            @apply flex
+            @apply gap-4
+
+    .icon
+        @apply w-10
+        @apply h-10
+
+        @apply rounded-full
+
+        @apply bg-primary-1
+
+        @apply flex
+        @apply items-center
+        @apply justify-center
+
+        @apply text-primary-6
+
+        @apply shrink-0
+
+        &.facebook
+            @apply text-lg
+
+    .content
+        @apply text-body-text-99
+        @apply leading-7
+        @apply text-sm
+        @apply lg:text-base
+
+        a
+            @apply transition-all
+            @apply duration-300
+
+            &:hover
+                @apply text-primary-1
+
+    &-bottom
+        @apply relative
+
+        @apply flex
+        @apply flex-col
+        @apply items-center
+
+        @apply pt-6
+
+    &-slogan
+        @apply inline-flex
+        @apply items-center
+        @apply justify-center
+
+        @apply bg-white
+
+        @apply rounded-full
+
+        @apply px-8
+        @apply lg:px-14
+
+        @apply py-4
+
+        @apply font-goldman
+        @apply uppercase
+
+        @apply text-primary-2
+
+        @apply text-lg
+        @apply md:text-2xl
+        @apply lg:text-[32px]
+
+        @apply text-center
+
+    &-copyright
+        @apply mt-8
+
+        @apply text-center
+
+        @apply text-body-text-66
+        @apply text-sm

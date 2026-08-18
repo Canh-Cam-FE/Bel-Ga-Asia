@@ -1,0 +1,53 @@
+section.about-processes.section-py
+    .container
+        .section-wrapper
+            .row
+                .col-lg-7
+                    .about-processes-swiper.swiper-column-auto.allow-touchMove(class="relative")
+                        .swiper
+                            .swiper-wrapper
+                                -for(i=0;i<4;i++)
+                                    .swiper-slide.item
+                                        .item-img
+                                            .img-wrapper
+                                                .img(class="img-ratio ratio:pt-[616_616]")
+                                                    +PugImg()
+                .col-lg-5
+                    .processes-list
+                        -for(i=0;i<5;i++)
+
+                            .process-item(
+                                class=i === 0 ? 'active' : ''
+                                data-index=i
+                            )
+
+                                .process-item__header
+
+                                    span.process-item__icon
+                                        = i === 0 ? '-' : '+'
+
+                                    span.process-item__title
+                                        if i === 0
+                                            | Premium Genetics
+                                        else if i === 1
+                                            | State-of-the-Art Hatchery
+                                        else if i === 2
+                                            | State of the Art Parent Stock Farm
+                                        else if i === 3
+                                            | Biosecurity and animal welfare
+                                        else
+                                            | Innovation and Sustainability
+
+                                .process-item__content
+
+                                    p
+                                        if i === 0
+                                            | A key strength of Bel Ga Asia lies in its access to world-class genetics through strategic partnerships with Aviagen and Hendrix Genetics.
+                                        else if i === 1
+                                            | Content for State-of-the-Art Hatchery.
+                                        else if i === 2
+                                            | Content for State of the Art Parent Stock Farm.
+                                        else if i === 3
+                                            | Content for Biosecurity and animal welfare.
+                                        else
+                                            | Content for Innovation and Sustainability.

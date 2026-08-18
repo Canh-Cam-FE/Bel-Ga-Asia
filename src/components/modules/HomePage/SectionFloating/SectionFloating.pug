@@ -1,0 +1,10 @@
+-
+	const floatingItems = [
+		{ icon: 'fa-comment-dots', brand: false, color: 'bg-primary-2', href: '#' },
+		{ icon: 'fa-facebook-f', brand: true, color: 'bg-primary-1', href: '#' },
+		{ icon: 'fa-phone', brand: false, color: 'bg-[#0079D5]', href: 'tel:' },
+	]
+.section-floating
+	each item in floatingItems
+		a.section-floating-btn(class=item.color href=item.href)
+			i(class=item.brand ? `fa-brands ${item.icon}` : `fa-light ${item.icon}`)

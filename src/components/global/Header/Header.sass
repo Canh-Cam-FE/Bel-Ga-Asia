@@ -1,0 +1,357 @@
+// header
+//     @apply fixed top-10 left-0 w-screen
+//     @apply text-white z-10
+//     .header-language
+//         .header-language-active
+//             @apply flex items-center
+//             li:not(.wpml-ls-current-language)
+//                 @apply hidden
+//         .header-language-list
+//             li.wpml-ls-current-language
+//                 @apply hidden
+
+// .header
+//     @apply fixed top-0 left-0 w-full z-50
+//     @apply transition-all duration-300
+
+//     --header-height: 96px
+
+//     &-container
+//         @apply mx-auto px-6
+//         @apply transition-all duration-300
+
+//     &-wrapper
+//         @apply relative flex items-center justify-between
+//         @apply h-[96px] bg-white
+//         @apply rounded-full
+//         @apply px-10
+//         @apply transition-all duration-300
+
+//     // ======================
+//     // Logo
+//     // ======================
+
+//     &-logo
+//         @apply absolute left-1/2 top-1/2
+//         @apply -translate-x-1/2 -translate-y-1/2
+//         @apply z-10
+//         @apply flex items-center justify-center
+//         @apply transition-all duration-300
+
+//         a
+//             @apply flex items-center justify-center
+
+//         img
+//             @apply w-[190px]
+//             @apply transition-all duration-300
+
+//     // ======================
+//     // Menu
+//     // ======================
+
+//     &-menu
+//         @apply flex items-center gap-10
+
+//         .header-link
+//             @apply text-[#00603D]
+//             @apply text-[16px]
+//             @apply font-semibold
+//             @apply whitespace-nowrap
+//             @apply transition-all duration-300
+
+//             &:hover
+//                 @apply text-[#E40046]
+
+//     &-menu-left
+//         @apply flex-1 justify-start
+
+//     &-menu-right
+//         @apply flex-1 justify-end
+
+//     // ======================
+//     // Search
+//     // ======================
+
+//     &-search
+//         @apply flex items-center justify-center
+//         @apply w-[44px] h-[44px]
+//         @apply rounded-full
+//         @apply border border-[#E40046]
+//         @apply text-[#E40046]
+
+//         svg
+//             @apply w-5 h-5
+
+//         path
+//             @apply fill-none
+//             @apply stroke-current
+//             @apply stroke-[2]
+
+//     // ======================
+//     // Language
+//     // ======================
+
+//     &-language
+//         @apply flex items-center gap-2
+//         @apply h-[44px]
+//         @apply px-5
+//         @apply rounded-full
+//         @apply border border-[#222]
+//         @apply text-black
+
+//         svg
+//             @apply w-4 h-4
+
+//     // ======================
+//     // Hamburger
+//     // ======================
+
+//     &-hamburger
+//         @apply hidden
+
+// // =================================
+// // Scroll state
+// // =================================
+
+// .header.active
+
+//     .header-container
+//         @apply px-0
+
+//     .header-wrapper
+//         @apply rounded-none
+//         @apply w-full
+//         @apply shadow-[0_4px_30px_rgba(0,0,0,0.08)]
+//         @apply px-12
+
+//     .header-logo
+
+//         img
+//             @apply w-[130px]
+
+// // =================================
+// // Responsive
+// // =================================
+
+// @media(max-width:1280px)
+
+//     .header
+
+//         &-wrapper
+//             @apply h-[80px]
+//             @apply px-6
+
+//         &-menu
+//             @apply gap-5
+
+//             .header-link
+//                 @apply text-sm
+
+//         &-logo
+
+//             img
+//                 @apply w-[150px]
+
+// @media(max-width:768px)
+
+//     .header
+
+//         &-container
+//             @apply px-4
+
+//         &-wrapper
+//             @apply h-[70px]
+//             @apply rounded-full
+
+//         &-menu
+//             @apply hidden
+
+//         &-logo
+
+//             img
+//                 @apply w-[120px]
+
+//         &-hamburger
+//             @apply flex flex-col gap-1.5
+//             @apply absolute right-5
+//             @apply w-10
+
+//             span
+//                 @apply block
+//                 @apply w-full h-[2px]
+//                 @apply bg-[#00603D]
+
+//     .header.active
+
+//         .header-wrapper
+//             @apply rounded-none
+
+    // .header.active
+//     @apply bg-Utility-white
+
+//     .header-container
+//         @apply pt-0
+//         @apply px-0
+
+//     .header-wrapper
+//         @apply h-[80px]
+
+//     .header-menu
+//         @apply bg-white
+//         @apply rounded-none
+
+//     .header-logo
+
+//         img
+//             @apply w-[150px]
+
+header
+    @apply fixed top-0 left-0 w-screen
+    @apply text-white z-10
+    .header-language
+        .header-language-active
+            @apply flex items-center
+            li:not(.wpml-ls-current-language)
+                @apply hidden
+        .header-language-list
+            li.wpml-ls-current-language
+                @apply hidden
+
+.header
+    @apply top-10
+    @apply transition-all duration-300
+
+    --header-height: 96px
+    --header-height-active: 118px
+    --header-logo: 140px
+    --header-logo-active: 94px
+
+    &.active
+        @apply top-0 bg-Utility-white
+        .header-wrapper
+            @apply rem:h-[var(--header-height-active)]
+            .header-logo
+                @apply w-[6.5%] rem:h-[var(--header-logo-active)]
+                .img
+                    @apply ratio:pt-[94_136]
+
+    .header-wrapper
+        @apply w-full rem:h-[var(--header-height)] flex-between gap-4 py-1 z-1 px-40
+        @apply transition-all duration-300
+
+        .header-logo
+            @apply absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2
+            @apply w-[10.5%] flex-center z-3 shrink-0 rem:h-[var(--header-logo)]
+            @apply transition-all duration-300
+            .img
+                @apply ratio:pt-[140_202]
+
+    .menu-left
+        @apply w-[43.75%] h-full flex justify-start gap-8 px-9 rounded-l-full
+        @apply bg-[linear-gradient(90deg,_#FFF_0%,_#FFF_86%,_rgba(255,255,255,.85)_92%,_rgba(255,255,255,0)_100%)]
+
+        .header-menu
+            @apply flex justify-start items-center
+            ul
+                @apply flex-center gap-8
+
+    .menu-right
+        @apply w-[43.75%] h-full flex justify-end gap-10 px-5.5 rounded-r-full
+        @apply bg-[linear-gradient(270deg,_#FFF_0%,_#FFF_86%,_rgba(255,255,255,.85)_92%,_rgba(255,255,255,0)_100%)]
+
+        .header-menu
+            @apply w-full flex justify-center items-center
+            ul
+                @apply w-full flex justify-end gap-17
+
+    .header-link
+        @apply relative text-primary-1 heading-4 font-bold font-primary whitespace-nowrap
+        @apply transition-all duration-300
+
+        &::before
+            content: ""
+            @apply absolute w-2 h-2 top-0 left-1/2 -translate-y-2full bg-primary-3 rounded-full
+            @apply opacity-0 transition-all duration-300
+
+        &:hover
+            @apply text-primary-3
+            &::before
+                @apply opacity-100
+
+    &-hamburger
+        @apply hidden
+
+// =====================================
+// Responsive
+// =====================================
+
+// @media(max-width:1280px)
+
+//     .header
+
+//         &-container
+//             @apply px-5
+//             @apply pt-5
+
+//         &-wrapper
+//             @apply h-[84px]
+
+//         &-menu
+//             @apply px-8
+//             @apply gap-6
+
+//             .header-link
+//                 @apply text-sm
+
+//         &-menu-left
+//             @apply mr-[130px]
+
+//         &-menu-right
+//             @apply ml-[130px]
+
+//         &-logo
+
+//             img
+//                 @apply w-[165px]
+
+// @media(max-width:768px)
+
+//     .header
+
+//         &-container
+//             @apply px-4
+//             @apply pt-4
+
+//         &-wrapper
+//             @apply h-[70px]
+
+//         &-menu
+//             @apply hidden
+
+//         &-logo
+
+//             img
+//                 @apply w-[120px]
+
+//         &-hamburger
+//             @apply flex
+//             @apply flex-col
+//             @apply gap-1.5
+
+//             @apply absolute
+//             @apply right-5
+
+//             @apply w-10
+
+//             span
+//                 @apply block
+//                 @apply w-full
+//                 @apply h-[2px]
+//                 @apply bg-[#00603D]
+
+// .header.active
+
+//     @media(max-width:768px)
+
+//         .header-wrapper
+//             @apply h-[64px]

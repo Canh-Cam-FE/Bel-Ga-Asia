@@ -1,0 +1,36 @@
+-
+    const certifications = [
+        {
+            title: 'Global Smart Livestock Practices',
+            desc: 'Global S.L.P certification demonstrates our commitment to international standards in sustainable livestock production, animal welfare, and responsible farming practices.',
+            image: './img/certifications/global-slp.png',
+        },
+        {
+            title: 'Hazard Analysis and Critical Control Points',
+            desc: 'HACCP is a globally accepted, science-based food safety management system designed to identify, evaluate, and control potential hazards throughout the production process.',
+            image: './img/certifications/haccp.png',
+        },
+    ]
+
+section.section-certifications.section-py
+    .container.flex.flex-col.gap-10
+        .section-header.flex.flex-col.gap-5
+            h1.section-title.home-heading Certifications
+            .section-subtitle.flex.flex-col.gap-3
+                p.home-subheading International Standards
+                p.section-desc.body-2.text-Utility-gray-950.text-center Committed to responsible poultry production through internationally recognized standards.
+
+        .row
+            each cert in certifications
+                .col-md-6.flex
+                    .certification-card(class="w-full h-full flex flex-col items-center gap-4 bg-Utility-white rounded-10 px-4 py-5 lg:px-10 lg:py-12")
+                        h2.card-title.heading-2.text-primary-1.font-bold.text-center= cert.title
+                        .card-img.flex-center
+                            .img-wrapper(class="w-[32.3529%]")
+                                .img(class="ratio aspect-square")
+                                    +PugImg()
+
+                        p.card-desc.flex-1.body-2.text-Utility-gray-950.text-center= cert.desc
+
+                        .btn.text-center
+                            +ButtonMore()

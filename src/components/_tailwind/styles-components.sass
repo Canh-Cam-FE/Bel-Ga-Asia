@@ -1,0 +1,107 @@
+@layer components
+    form.submitting
+        button
+            @apply pointer-events-none relative
+            &::before
+                content: ''
+                animation-duration: 0.5s
+                @apply w-5 h-5 border-3 border-primary-1/40 border-t-primary-1 rounded-full inline-block
+                @apply absolute animate-spin left-full ml-3
+
+.item-wrapper
+    @apply rem:min-h-[214px]
+
+    &:nth-child(2n + 1)
+        @apply md:pr-8 md:border-r md:border-primary-4/50
+
+    @apply xl:border-r xl:border-primary-4/50
+
+    &:nth-child(4n + 1)
+        @apply w-full xl:rem:w-[330px] xl:pl-0 xl:pr-10
+
+    &:nth-child(4n + 2),
+    &:nth-child(4n + 3)
+        @apply w-full xl:rem:w-[370px] px-8 xl:px-10
+
+    &:nth-child(4n)
+        @apply w-full xl:rem:w-[330px] px-8 xl:pl-10 xl:pr-0 xl:border-r-0
+
+.box-item
+    @apply relative w-full h-full flex flex-col items-center gap-5 cursor-default
+
+    @screen md
+        &:nth-child(2n)::after
+            @apply hidden
+
+        &:nth-child(2n + 1)::after
+            @apply block
+
+    @screen lg
+        &:nth-child(2n)::after
+            @apply block
+
+        &:nth-child(4n)::after
+            @apply hidden
+
+.box-icon
+    @apply w-20 h-20 flex-center rounded-full bg-white text-primary-4
+    @apply transition-all duration-300
+
+    &:hover
+        @apply bg-primary-3
+
+    .material-symbols-outlined
+        @apply heading-1 text-primary-4 text-center
+
+.badge
+    @apply w-fit flex-center gap-3 rounded-full px-4 py-3 border-2 border-primary-4 bg-transparent
+    @apply transition-all duration-300 ease-in-out
+
+    &-icon
+        @apply w-8 h-8 flex-center shrink-0 text-primary-3
+        @apply transition-all duration-300 ease-in-out
+
+    &-text
+        @apply heading-4 text-primary-3 font-bold whitespace-nowrap
+        @apply transition-all duration-300 ease-in-out
+
+    &:hover
+        @apply bg-primary-1 border-primary-1
+
+        .badge-icon,
+        .badge-text
+            @apply text-Utility-white
+
+.product-card
+    @apply relative h-full flex flex-col px-10 py-12 gap-4
+    @apply bg-secondary-6 rounded-10 border-2 border-Utility-white shadow-[0_12px_30px_0_#FFF4DD]
+
+    .card-feature-icon
+        @apply w-16 h-16 lg:w-20 lg:h-20 flex-center rounded-full bg-Utility-white text-primary-4 heading-1 cursor-default
+        @apply transition-all duration-300
+
+        &:hover
+            @apply bg-primary-3
+
+    .card-title
+        @apply relative flex flex-col items-center md:items-start
+
+        &::after
+            content: ""
+            @apply block w-15 h-0.5 bg-primary-4
+            @apply mt-5 mb-1
+
+.page-banner
+    .swiper-column-auto
+        --mr: 0px
+
+    .title-wrapper
+        @apply absolute -bottom-40 inset-x-0 w-full rem:h-[754px] flex-center flex-col gap-5
+
+        &::before
+            content: ""
+            @apply absolute inset-x-0 w-full h-full z-2 pointer-events-none
+            @apply bg-[linear-gradient(180deg,rgba(255,251,240,0.00)_0%,#FFFBF0_43.9%)]
+
+        .page-title
+            @apply absolute top-1/3 translate-y-1/2 z-2
