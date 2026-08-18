@@ -1,22 +1,27 @@
 section.products-advantages
     .container
-        .section-wrapper(class="flex-center flex-col gap-10")
+        .section-wrapper(class="flex-center flex-col gap-10 pb-20")
             .section-title(class="flex-center flex-col gap-6")
                 .section-heading
                     h2.heading
                         .text(class="heading-1-subpage text-primary-4 text-center font-bold")
                             | WHY CHOOSE BEL GA ASIA'S PRODUCTS
 
-        .section-content
-            .grid(class="grid-cols-1 md:grid-cols-2 lg:grid-cols-3")
-                .item-container
-                    .item-img(class="w-1/4")
-                        .img(class="img-ratio aspect-square")
-                            +PugImg()
-                    .item-text(class="flex-center flex-col gap-3")
-                        h3.text-title
-                            .text(class="heading-4 text-primary-3 font-bold uppercase text-center")
-                                | Premium Genetics
-                        p.text-desc
-                            .text(class="body-2 text-Utility-gray-950 text-center")
-                                | High-quality parent stock sourced from world-leading breeding companies.
+            .section-content
+                .grid
+                    -for(i=0;i<6;i++)
+                        .item-container
+                            .item-content(class="flex-center flex-col gap-4 md:gap-5 w-full h-full")
+                                .item-img(class="w-[24.21%]")
+                                    .img(class="img-ratio aspect-square")
+                                        +PugImg()
+
+                                .item-text(class="flex-center flex-col flex-1 gap-3")
+                                    .text-title
+                                        h3.title
+                                            .text(class="heading-4 text-secondary-2 font-bold")
+                                                | PREMIUM GENETICS
+                                    .text-desc(class="flex-1")
+                                        p.desc
+                                            .text(class="body-2 text-Utility-gray-950 text-justify")
+                                                | High-quality parent stock sourced from world-leading breeding companies.

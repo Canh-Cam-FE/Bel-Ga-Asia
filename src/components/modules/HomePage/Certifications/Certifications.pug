@@ -1,0 +1,30 @@
+section.home-certifications.section-py
+    .container
+        .section-wrapper(class="flex flex-col gap-10" data-aos="fade-up")
+            .section-header(class="flex-center flex-col gap-5" data-aos="fade-up")
+                .section-title
+                    h2.text-title
+                        .text(class="heading-1-60 text-primary-4 font-bold uppercase text-center")
+                            | Certifications
+                .section-subtitle(class="flex flex-col gap-3")
+                    p.home-subheading International Standards
+                    p.section-desc.body-2.text-Utility-gray-950.text-center Committed to responsible poultry production through internationally recognized standards.
+
+            .row
+                -for(i=0;i<2;i++)
+                    .col-md-6.flex(data-aos="fade-up" data-aos-delay=`${i * 150}`)
+                        .certification-card(class="w-full h-full flex flex-col items-center gap-4 bg-Utility-white rounded-10 px-4 py-5 lg:px-10 lg:py-12")
+                            h2.text-title
+                                .text(class="heading-2 text-primary-1 font-bold text-center")
+                                    | Global Smart Livestock Practices
+                            .card-img(class="flex-center flex-col")
+                                .img-wrapper(class="w-[32.3529%]")
+                                    .img(class="ratio aspect-square")
+                                        +PugImg()
+
+                                p.text-desc
+                                    .text(class="flex-1 body-2 text-Utility-gray-950 text-center")
+                                        | Global S.L.P certification demonstrates our commitment to international standards in sustainable livestock production, animal welfare, and responsible farming practices.
+
+                            .btn.text-center
+                                +ButtonMore()

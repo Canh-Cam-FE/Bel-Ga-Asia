@@ -1,17 +1,32 @@
-.header-search-form
-	visibility: hidden
-	@apply fixed rem:top-[81px] left-0 w-full h-full bg-black bg-opacity-70 backdrop-blur-md z-[1000] flex justify-center items-center transition-all duration-300 opacity-0  pointer-events-none
-	&.active
-		@apply opacity-100 visible pointer-events-auto
-	.wrap-form-search-product
-		max-width: r(800px)
-		margin: 0 auto
-		@apply w-full
-		.productsearchbox
-			@apply w-full flex relative flex-wrap
-			[class*="Module"]
-				width: 100% !important
-			input
-				@apply flex-1 h-12.5 bg-white text-base px-7.5 outline-0 border-0 #{!important}
-			button
-				@apply w-12.5 flex items-center justify-center  outline-0 border-0 border-l border-[#E0E0E0] bg-black
+.header-search-form-desktop
+    visibility: hidden
+    @apply hidden xl:flex fixed top-0 left-0 w-screen h-screen bg-black bg-opacity-70 backdrop-blur-md z-[1000] justify-center items-center transition-all duration-300 opacity-0  pointer-events-none
+    &.active
+        @apply opacity-100 visible pointer-events-auto
+    .wrap-form-search-product
+        max-width: r(800px)
+        margin: 0 auto
+        @apply w-full
+        .productsearchbox
+            @apply -translate-y-40 w-full flex relative flex-wrap gap-2
+            [class*="Module"]
+                width: 100% !important
+            input
+                @apply flex-1 h-12.5 bg-white text-base text-primary-1 px-7.5 outline-0 border-0 rounded-lg font-primary outline-none #{!important}
+            button
+                @apply w-12.5 flex items-center justify-center outline-0 border-0 bg-primary-1 rounded-lg text-white
+
+.header-search-form-mobile
+    @apply flex-center xl:hidden
+
+    .wrap-form-search-product
+        max-width: r(800px)
+        margin: 0 auto
+        .productsearchbox
+            @apply w-full flex relative gap-2
+            [class*="Module"]
+                width: 100% !important
+            input
+                @apply w-full h-8 m-0 pl-4 pr-20 bg-white text-base text-primary-1 outline-0 border-0 rounded-lg font-primary outline-none #{!important}
+            button
+                @apply w-12.5 flex-center outline-0 border-0 text-primary-1

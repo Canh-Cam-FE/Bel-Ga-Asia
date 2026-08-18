@@ -1,67 +1,3 @@
-//- header.header
-//-     .header-container
-
-//-         .header-wrapper
-
-//-             // Left menu
-//-             nav.header-menu.header-menu-left
-//-                 a.header-link(href="#")
-//-                     | ABOUT US
-
-//-                 a.header-link(href="#")
-//-                     | PRODUCTS AND CERTIFICATE
-
-//-                 a.header-link(href="#")
-//-                     | SUSTAINABILITY
-
-
-//-             // Logo
-//-             .header-logo
-//-                 a(href="/")
-//-                     img(
-//-                         src="/assets/images/logo.svg"
-//-                         alt="Bel Ga Asia"
-//-                     )
-
-
-//-             // Right menu
-//-             nav.header-menu.header-menu-right
-
-//-                 a.header-link(href="#")
-//-                     | NEWS
-
-//-                 a.header-link(href="#")
-//-                     | CAREER
-
-//-                 a.header-link(href="#")
-//-                     | CONTACT US
-
-
-//-                 button.header-search(type="button")
-//-                     svg(
-//-                         viewBox="0 0 24 24"
-//-                     )
-//-                         path(
-//-                             d="M21 21L16.65 16.65M19 11A8 8 0 1 1 3 11a8 8 0 0 1 16 0Z"
-//-                         )
-
-
-//-                 button.header-language(type="button")
-//-                     span EN
-//-                     svg(
-//-                         viewBox="0 0 20 20"
-//-                     )
-//-                         path(
-//-                             d="M5 7L10 12L15 7"
-//-                         )
-
-
-//-             // Mobile
-//-             .header-hamburger
-//-                 span
-//-                 span
-//-                 span
-
 header.header
     .header-wrapper
 
@@ -75,7 +11,7 @@ header.header
 
         // Logo
         .header-logo
-            .img-wrapper(class="w-full h-full")
+            .img-wrapper(class="w-full")
                 .img(class="img-ratio")
                     +PugImg("./img/Logo.png")
 
@@ -87,16 +23,58 @@ header.header
                 'CONTACT US'
             ], "menu-item")
 
+            // Desktop
             .header-actions(class="flex-center gap-2")
                 .header-search.btn.btn-search
                     i.fa-light.fa-magnifying-glass
+                    .header-search-form-desktop#header-search-form-desktop
+                        .close.flex.items-center.justify-center.absolute.top-4.right-8.bg-white.text-3xl.text-primary-1.rounded-3.cursor-pointer(class="w-12.5 h-12.5")
+                            i.fa-light.fa-xmark
+                        .container
+                            .wrap-form-search-product
+                                .productsearchbox
+                                    input(type="text" placeholder="Search...")
+                                    button
+                                        i.fa-regular.fa-magnifying-glass
+
 
                 .header-language.btn.btn-language
                     +HeaderLanguage()
                     i.fa-light.fa-chevron-down
 
-        // Mobile
-        .header-hamburger
-            span
-            span
-            span
+    // Mobile menu
+    .header-mobile-wrapper
+        .header-actions(class="w-full flex gap-2")
+            .header-search.btn.btn-search
+                .header-search-form-mobile#header-search-form-mobile
+                    .container
+                        .wrap-form-search-product
+                            .productsearchbox
+                                input(type="text" placeholder="Search...")
+                                button
+                                    i.fa-regular.fa-magnifying-glass
+
+            .header-language.btn.btn-language
+                +HeaderLanguage()
+                i.fa-light.fa-chevron-down
+
+
+        .menu-mobile
+            +HeaderMenu([
+                'ABOUT US',
+                'PRODUCTS AND CERTIFICATE',
+                'SUSTAINABILITY',
+                'NEWS',
+                'CAREER',
+                'CONTACT US'
+            ], "mobile-menu-item")
+
+    .header-hamburger
+        span
+        span
+        span
+        #pulseMe
+            .bar.left
+            .bar.top
+            .bar.right
+            .bar.bottom

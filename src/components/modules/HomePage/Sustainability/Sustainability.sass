@@ -1,0 +1,28 @@
+.home-sustainability
+    .banner-overlay
+        @apply absolute bottom-0 left-0 w-full h-60 z-1 overflow-hidden
+        @apply bg-[linear-gradient(180deg,_rgba(255,254,250,0.00)_0%,_#FFFEFA_55.63%)]
+
+    .section-sustainability-contact
+        @apply relative py-10 border-t border-primary-4
+
+    .swiper-slide
+        &:not(:last-child)
+            .section-sustainability-info
+                @apply relative
+
+                &::before
+                    content: ""
+                    @apply absolute w-0.25 h-full top-0 right-0 xl:rem:translate-x-5 bg-primary-4
+
+    .icon
+        @apply w-10 h-10 flex-center shrink-0 rounded-full bg-primary-1 text-Utility-white
+
+    .btn-wrapper
+        @apply absolute w-full flex-center xl:flex-between top-full xl:top-1/2 pointer-events-none z-1
+
+        .btn-left
+            @apply absolute left-32 md:left-60 xl:-left-23 pointer-events-auto
+
+        .btn-right
+            @apply absolute right-32 md:right-60 xl:-right-23 pointer-events-auto

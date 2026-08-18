@@ -1,4 +1,4 @@
-section.products-processes
+section.products-processes(class="relative section-py z-2")
     .container
         .section-wrapper(class="flex-center flex-col gap-10")
             .section-title(class="flex-center flex-col gap-6")
@@ -13,57 +13,27 @@ section.products-processes
 
 
             .section-content(class="relative")
-                .processes-list(class="w-full flex items-start justify-between gap-4")
-                    -
-                        const processes = [
-                            {
-                                icon: './img/icon-genetics.svg',
-                                title: 'GENETICS',
-                                desc: 'World-class genetics sourced from trusted global breeding companies'
-                            },
-                            {
-                                icon: './img/icon-parent-stock-farms.svg',
-                                title: 'PARENT STOCK FARMS',
-                                desc: 'Healthy breeder flocks managed under strict biosecurity standards'
-                            },
-                            {
-                                icon: './img/icon-quality-hatching-eggs.svg',
-                                title: 'QUALITY HATCHING EGGS',
-                                desc: 'Carefully selected and monitored eggs for optimal hatchability'
-                            },
-                            {
-                                icon: './img/icon-hatcheries.svg',
-                                title: 'STATE-OF-THE-ART HATCHERIES',
-                                desc: 'Advanced incubation technology and strict quality control'
-                            },
-                            {
-                                icon: './img/icon-premium-chicks.svg',
-                                title: 'PREMIUM CHICKS',
-                                desc: 'Healthy, uniform and high-performance chicks delivered with care'
-                            },
-                            {
-                                icon: './img/icon-customer-farms.svg',
-                                title: 'CUSTOMER FARMS',
-                                desc: 'Delivered to farms across Asia with dedicated support'
-                            }
-                        ]
+                .processes-list(class="w-full flex items-start justify-between gap-10")
+                    -for(i=0;i<6;i++)
+                        .process-item(class="relative min-w-0 flex-1 flex flex-col items-center")
 
-                    each process, index in processes
-                        .process-item(class="relative min-w-0 flex-center flex-1 flex-col")
-                            .process-top(class="w-full flex items-center gap-4 mb-4")
-                                .process-icon(class="w-1/2 shrink-0 mx-auto rounded-full bg-white overflow-hidden")
+                            .process-top(class="w-full flex items-center justify-center gap-4 mb-4")
+                                .process-icon(class="w-1/2 shrink-0 rounded-full bg-white overflow-hidden")
                                     .img(class="img-ratio aspect-square")
                                         +PugImg()
 
+                            .process-content(class="w-full text-center flex flex-col gap-3")
+                                .process-title(class="rem:min-h-[52px] flex items-start justify-center")
+                                    h3.text-title(class="heading-4 text-primary-1 font-bold line-clamp-2")
+                                        .text
+                                            | GENETICS
 
-                            .process-content(class="w-full text-center")
-                                h3.process-title(class="font-bold text-primary-4 uppercase")
-                                    | #{process.title}
+                                .process-desc(class="flex items-start justify-center")
+                                    p.text-desc
+                                        .text(class="body-2 text-Utility-gray-950 text-justify")
+                                            | World-class genetics sourced from trusted global breeding companies
 
-                                p.process-desc(class="body-2 text-Utility-gray-950")
-                                    | #{process.desc}
-
-                            if index < processes.length - 1
-                                .process-arrow(class="absolute top-1/4 -translate-y-1/2 -right-5 flex-center shrink-0 text-primary-3 font-black")
+                            if i<5
+                                .process-arrow(class="absolute top-1/4 -translate-y-full -right-8 flex-center shrink-0 text-2xl text-primary-3 font-black")
                                     span.material-symbols-outlined
                                         | arrow_forward

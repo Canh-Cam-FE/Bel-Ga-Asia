@@ -1,0 +1,37 @@
+section.about-location
+    .container
+        .section-wrapper(class="flex flex-col gap-10")
+            .section-header(class="relative flex flex-col gap-6 z-2" data-aos="fade-up")
+                .section-title
+                    h2.text-title 
+                        .text(class="heading-1-subpage text-primary-4 font-bold uppercase text-center")
+                            | OUR LOCATIONS
+
+                .category
+                    ul.category-list.flex-center.flex-wrap.gap-5
+                        each item, i in ['Vietnam', 'Myanmar', 'Cambodia']
+                            li.list-item.flex.items-center
+                                a.item(class=i===0 ? 'active' : '')= item
+
+            .section-content(class="relative")
+                .content-wrapper(class="rem:min-h-[690px]")
+                    .left(class="absolute left-0 top-0 translate-x-1/2 translate-y-[10%] w-[36%] z-2")
+                        .overview-stats(class="flex flex-col justify-center gap-6" data-aos="fade-right")
+                            -for(i=0;i<2;i++)
+                                .overview-stat(class="flex items-start gap-3 pb-5 border-b border-primary-4" data-aos="fade-up" data-aos-delay=i*100)
+                                    .overview-number(class="w-[38%]")
+                                        p.text.countup(class="text-64 text-left text-primary-3 font-black" data-number="03")
+                                            | 03
+
+                                    .overview-info(class="flex flex-col justify-center gap-3")
+                                        p.text(class="heading-4 text-primary-1 font-bold")
+                                            | HATCHERIES
+
+                                        p.text(class="body-2 text-Utility-gray-950")
+                                            | We embrace innovation to create sustainable solutions, while enhancing productivity
+
+                    .right(class="absolute w-[90%] -mt-50 -right-8 z-1")
+                        .overview-map(data-aos="fade-down")
+                            .img-wrapper(class="w-full")
+                                .img(class="img-ratio ratio:pt-[959_1267]")
+                                    +PugImg("./img/About-Map.png")

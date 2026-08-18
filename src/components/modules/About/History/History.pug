@@ -1,90 +1,140 @@
-section.about-history
-    .container
-        .section-wrapper(class="flex-center flex-col gap-4 md:gap-10")
-            .section-title
-                h2.title
-                    .text(class="heading-1-subpage text-primary-4 font-bold uppercase")
-                        | Core Values
-                p.desc
-                    .text(class="body-1 text-Utility-gray-950")
-                        | Driven by innovation, quality, and sustainability, Bel Ga Asia has continuously evolved to support the growth of the poultry industry.
+section.about-history(class="pb-20")
+    .container(class="overflow-hidden")
+        .section-wrapper(class="flex-center flex-col gap-6 md:gap-10")
+            .section-header(class="flex-center flex-col gap-6")
+                .section-title
+                    h2.text-title
+                        .text(class="heading-1-subpage text-primary-4 font-bold uppercase")
+                            | HISTORY DEVELOPMENT
+                .section-desc
+                    p.text-desc
+                        .text(class="body-1 text-Utility-gray-950")
+                            | Driven by innovation, quality, and sustainability, Bel Ga Asia has continuously evolved to support the growth of the poultry industry. Every milestone reflects a journey of continuous improvement, trusted partnerships, and a long-term commitment to sustainable growth.
 
-            .section-content
-                .history-swiper.swiper-column-auto
-                    .swiper
-                        .swiper-wrapper
-                            -
-                                const history = [
-                                    {
-                                        year: '2013',
-                                        position: 'top',
-                                        title: 'Bel Gà Vietnam established',
-                                        items: [
-                                            'Loc Son Hatchery',
-                                            'Loc Quang PS Farm'
-                                        ]
-                                    },
-                                    {
-                                        year: '2015',
-                                        position: 'bottom',
-                                        items: [
-                                            'Loc Lam PS Farm'
-                                        ]
-                                    },
-                                    {
-                                        year: '2017',
-                                        position: 'top',
-                                        title: 'Bel Ga Myanmar established',
-                                        items: []
-                                    },
-                                    {
-                                        year: '2018',
-                                        position: 'bottom',
-                                        items: [
-                                            'Myaung Dakar Hatchery',
-                                            'Loc Tan PS Farm'
-                                        ]
-                                    },
-                                    {
-                                        year: '2019',
-                                        position: 'top',
-                                        items: [
-                                            'Bago 1 PS Farm'
-                                        ]
-                                    },
-                                    {
-                                        year: '2020',
-                                        position: 'bottom',
-                                        items: [
-                                            'Tan Phuc PS Farm'
-                                        ]
-                                    },
-                                    {
-                                        year: '2021',
-                                        position: 'top',
-                                        items: [
-                                            'Tay Ninh Hatchery',
-                                            'Bago 2 PS Farm'
-                                        ]
-                                    }
-                                ]
 
-                            each item, index in history
-                                .swiper-slide
-                                    .history-item(class=`is-${item.position}`)
-                                        .history-card
-                                            if item.title
-                                                h3.title
-                                                    | #{item.title}
+            .section-content(class="w-full")
+                .about-history-swiper.swiper
+                    .timeline-axis
 
-                                            if item.items.length
-                                                ul.list
-                                                    each content in item.items
-                                                        li
-                                                            | #{content}
+                    .swiper-wrapper
+                        //- 2013
+                        .swiper-slide
+                            .timeline-item
+                                .timeline-card(class="flex-center flex-col gap-3 px-6 py-4 rounded-3 bg-Utility-white shadow-4")
+                                    h3.text-title
+                                        .text(class="heading-4 text-primary-1 font-bold whitespace-nowrap")
+                                            | Bel Gà Vietnam established
 
-                                        .history-year
-                                            | #{item.year}
+                                    ul.text-desc(class="body-2 text-Utility-gray-950")
+                                        li
+                                            | Loc Son Hatchery
+                                        li
+                                            | Loc Quang PS Farm
 
-                        .history-line
-                            .history-progress
+                                .timeline-position
+                                    .timeline-year
+                                        | 2013
+
+                                    .timeline-dot
+
+                        //- 2015
+                        .swiper-slide
+                            .timeline-item
+                                .timeline-card(class="flex-center flex-col gap-3 px-6 py-4 rounded-3 bg-Utility-white shadow-4")
+                                    ul.text-desc(class="body-2 text-Utility-gray-950")
+                                        li
+                                            | Loc Lam PS Farm
+
+                                .timeline-position
+                                    .timeline-year
+                                        | 2015
+
+                                    .timeline-dot
+
+                        //- 2017
+                        .swiper-slide
+                            .timeline-item
+                                .timeline-card(class="flex-center flex-col gap-3 px-6 py-4 rounded-3 bg-Utility-white shadow-4")
+                                    h3.text-title
+                                        .text(class="heading-4 text-primary-1 font-bold whitespace-nowrap")
+                                            | Bel Ga Myanmar established
+
+                                .timeline-position
+                                    .timeline-year
+                                        | 2017
+
+                                    .timeline-dot
+
+                        //- 2018
+                        .swiper-slide
+                            .timeline-item
+                                .timeline-card(class="flex-center flex-col gap-3 px-6 py-4 rounded-3 bg-Utility-white shadow-4")
+                                    ul.text-desc(class="body-2 text-Utility-gray-950")
+                                        li
+                                            | Myaung Dakar Hatchery
+                                        li
+                                            | Loc Tan PS Farm
+
+                                .timeline-position
+                                    .timeline-year
+                                        | 2018
+
+                                    .timeline-dot
+
+                        //- 2019
+                        .swiper-slide
+                            .timeline-item
+                                .timeline-card(class="flex-center flex-col gap-3 px-6 py-4 rounded-3 bg-Utility-white shadow-4")
+                                    ul.text-desc(class="body-2 text-Utility-gray-950")
+                                        li
+                                            | Bago 1 PS Farm
+
+                                .timeline-position
+                                    .timeline-year
+                                        | 2019
+
+                                    .timeline-dot
+
+                        //- 2020
+                        .swiper-slide
+                            .timeline-item
+                                .timeline-card(class="flex-center flex-col gap-3 px-6 py-4 rounded-3 bg-Utility-white shadow-4")
+                                    ul.text-desc(class="body-2 text-Utility-gray-950")
+                                        li
+                                            | Tan Phuc PS Farm
+
+                                .timeline-position
+                                    .timeline-year
+                                        | 2020
+
+                                    .timeline-dot
+
+                        //- 2021
+                        .swiper-slide
+                            .timeline-item
+                                .timeline-card(class="flex-center flex-col gap-3 px-6 py-4 rounded-3 bg-Utility-white shadow-4")
+                                    ul.text-desc(class="body-2 text-Utility-gray-950")
+                                        li
+                                            | Tay Ninh Hatchery
+                                        li
+                                            | Bago 2 PS Farm
+
+                                .timeline-position
+                                    .timeline-year
+                                        | 2021
+
+                                    .timeline-dot
+
+                    button.timeline-nav.btn-prev(
+                        type="button"
+                        aria-label="Previous"
+                    )
+                        span.material-symbols-outlined
+                            | arrow_back
+
+                    button.timeline-nav.btn-next(
+                        type="button"
+                        aria-label="Next"
+                    )
+                        span.material-symbols-outlined
+                            | arrow_forward

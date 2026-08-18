@@ -1,171 +1,183 @@
 .about-history
-    overflow: hidden
 
     .section-content
         @apply relative w-full
 
-    .history-swiper
-        @apply relative w-full
+    .about-history-swiper
+        @apply relative w-full overflow-visible
 
-        .swiper
-            @apply relative w-full overflow-visible
+        .timeline-axis
+            transform: translateY(-50%)
+            @apply absolute z-[1] left-0 right-0 top-1/2 h-0.25 bg-primary-3
 
+        // ----------------------------------------
+        // Swiper wrapper
+        // ----------------------------------------
         .swiper-wrapper
-            @apply items-stretch
+            @apply items-center
 
+        // ----------------------------------------
+        // 1 slide = 1 timeline point
+        // ----------------------------------------
         .swiper-slide
-            width: #{r(220px)}
-            height: #{r(430px)}
+            @apply relative flex-center shrink-0
+            @apply rem:h-[440px]
 
-            @apply relative flex-shrink-0
+        // ----------------------------------------
+        // Timeline item
+        // ----------------------------------------
+        .timeline-item
+            @apply relative flex-center w-full h-full
 
-            @screen md
-                width: #{r(300px)}
-                height: #{r(500px)}
+        // ----------------------------------------
+        // Position = dot + year
+        // ----------------------------------------
+        .timeline-position
+            transform: translate(-50%, -50%)
+            @apply absolute z-[3] left-1/2 top-1/2
+            @apply flex-center flex-col
 
-            @screen lg
-                width: #{r(330px)}
+        // ----------------------------------------
+        // Dot
+        // ----------------------------------------
+        .timeline-dot
+            @apply relative z-[3] w-3 h-3 rounded-full bg-primary-4
 
-    .history-item
-        @apply relative w-full h-full
+        // ----------------------------------------
+        // Year
+        // ----------------------------------------
+        .timeline-year
+            @apply absolute whitespace-nowrap
+            @apply body-2 text-primary-1 font-bold
 
-        .history-card
-            min-height: #{r(80px)}
-            @apply absolute left-1/2 w-[calc(100%-32px)]
-            @apply -translate-x-1/2
-            @apply bg-white rounded-[12px]
-            @apply px-5 py-4
-            @apply shadow-[0_0_30px_rgba(255,255,255,0.35)]
+        // ----------------------------------------
+        // Content box
+        // ----------------------------------------
+        .timeline-card
+            transform: translateX(-50%)
+            @apply absolute z-[2]
+            @apply left-1/2
+            // @apply w-[calc(100%-24px)]
+            @apply rem:w-[296px]
+            // @apply max-w-full
+            @apply px-4 py-3
 
-            @screen md
-                width: calc(100% - #{r(40px)})
-                min-height: #{r(110px)}
-                @apply px-6 py-5
+            .text-title
+                @apply text-center
 
-            .title
-                @apply mb-3
-                @apply text-[18px] leading-[1.3]
-                @apply text-primary-4 font-bold
-
-            .list
-                @apply flex flex-col gap-2
-                @apply pl-5
+            .text-desc
+                @apply m-0 pl-5 text-left
 
                 li
-                    @apply relative
-                    @apply text-[16px] leading-[1.4]
-                    @apply text-Utility-gray-950
+                    @apply pl-1
 
-                    &::marker
-                        @apply text-black
+        // ----------------------------------------
+        // Odd = content phía trên
+        // ----------------------------------------
+        .swiper-slide:nth-child(odd)
 
-        .history-year
-            @apply absolute left-1/2
-            @apply -translate-x-1/2
-            @apply text-primary-4 font-bold
-            @apply text-[18px] leading-none
-            @apply whitespace-nowrap
+            .timeline-card
+                bottom: calc(50% + 96px)
 
-    // Item nằm phía trên timeline
-    .history-item.is-top
-        .history-card
-            bottom: calc(50% + #{r(50px)})
+            .timeline-year
+                top: calc(100% + 14px)
 
-        .history-year
-            bottom: calc(50% + #{r(16px)})
+        // ----------------------------------------
+        // Even = content phía dưới
+        // ----------------------------------------
+        .swiper-slide:nth-child(even)
 
-    // Item nằm phía dưới timeline
-    .history-item.is-bottom
-        .history-card
-            top: calc(50% + #{r(50px)})
+            .timeline-card
+                top: calc(50% + 92px)
 
-        .history-year
-            top: calc(50% + #{r(16px)})
+            .timeline-year
+                bottom: calc(100% + 14px)
 
-    // Timeline
-    .history-line
-        top: 50%
-        height: 1px
-        background: rgba(0, 129, 91, 0.8)
-        @apply absolute left-0 right-0
-        @apply pointer-events-none
-
-        &::before
-            content: ''
-            background: rgba(0, 129, 91, 0.8)
-            @apply absolute left-0 top-1/2
-            @apply -translate-y-1/2
-            @apply w-full h-[1px]
-
-    .history-progress
-        height: 0
-        @apply absolute top-1/2
-        @apply -translate-y-1/2
-        @apply left-0 right-0
-
-        &::before
-            content: ''
-            @apply absolute left-0 top-1/2
-            @apply -translate-y-1/2
-            @apply w-[10px] h-[10px]
-            @apply rounded-full bg-primary-3
-
-    // Navigation
-    .swiper-navigation
-        top: 50%
-        @apply absolute z-10
-        @apply left-0 right-0
-        @apply -translate-y-1/2
-        @apply flex justify-between
-        @apply pointer-events-none
-
-        .btn-prev,
-        .btn-next
-            @apply pointer-events-auto
+        // ----------------------------------------
+        // Navigation
+        // ----------------------------------------
+        .timeline-nav
+            transform: translateY(-50%)
+            @apply absolute z-[10] top-1/2
             @apply flex-center
-            @apply w-[52px] h-[52px]
+            @apply w-13 h-13
             @apply rounded-full
-            @apply border border-primary-4
-            @apply text-primary-4
+            @apply border border-primary-3
             @apply bg-transparent
+            @apply text-primary-3
             @apply transition-all duration-300
 
             &:hover
-                @apply bg-primary-4 text-white
+                @apply bg-primary-3 text-Utility-white
 
             .material-symbols-outlined
                 @apply text-[24px]
 
         .btn-prev
-            @apply -translate-x-1/2
+            @apply left-0
 
         .btn-next
-            @apply translate-x-1/2
+            @apply right-0
 
-    // @screen lg
-    //     .history-swiper
-    //         .swiper-slide
-    //             width: #{r(280px)}
+    // ==================================================
+    // Desktop
+    // ==================================================
+    @screen xl
 
-    //     .swiper-navigation
-    //         .btn-prev,
-    //         .btn-next
-    //             @apply w-10 h-10
+        .about-history-swiper
 
-    // @screen md
-    //     .history-swiper
-    //         .swiper
-    //             @apply overflow-visible
+            .swiper-slide
+                /*
+                 * Swiper chia container thành đúng 7 phần.
+                 * Card không được vượt quá width của slide.
+                 */
+                width: calc(100% / 5)
+                margin-right: -96px !important
 
-    //         .swiper-slide
-    //             width: #{r(260px)}
-    //             height: #{r(420px)}
+            .timeline-card
 
-    //     .history-line
-    //         top: 50%
+                @apply px-5 py-4
 
-    //     .history-card
-    //         width: calc(100% - #{r(24px)}) !important
+            .timeline-dot
+                @apply w-3 h-3
 
-    //     .swiper-navigation
-    //         @apply hidden
+    // ==================================================
+    // Tablet
+    // ==================================================
+    @media (min-width: 768px) and (max-width: 1279px)
+
+        .about-history-swiper
+
+            .swiper-slide
+                width: calc(100% / 4)
+
+            .timeline-card
+                max-width: 100%
+
+                @apply px-4 py-3
+
+    // ==================================================
+    // Mobile
+    // ==================================================
+    @media (max-width: 767px)
+
+        .about-history-swiper
+            @apply px-10
+
+            .swiper-slide
+                width: 100%
+
+            .timeline-card
+                max-width: calc(100% - 24px)
+
+            .timeline-nav
+                @apply w-10 h-10
+
+                .material-symbols-outlined
+                    @apply text-[20px]
+
+            .btn-prev
+                @apply left-0
+
+            .btn-next
+                @apply right-0

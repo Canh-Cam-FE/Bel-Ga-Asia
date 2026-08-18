@@ -1,8 +1,18 @@
 .about-values
+    --spacing: 40px
+    .grid
+        @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 items-stretch rem:gap-[calc(var(--spacing)*2)]
     .item-container
-        @apply flex-center
+        @apply flex-center h-full
+
+        .item-text
+            @apply w-full
+            .text-desc
+                @apply relative
 
         &:not(:last-child)
-            .item-content
+            .item-text
                 .text-desc
-                    @apply pr-10 lg:border-r lg:border-primary-3
+                    &::before
+                        content: ""
+                        @apply absolute w-0.25 h-full top-0 right-0 rem:translate-x-[var(--spacing)] bg-primary-3

@@ -1,0 +1,80 @@
+section.home-sustainability(class="relative overflow-hidden")
+
+    .banner-image(class="relative" data-aos="fade-in" data-aos-duration="1000")
+        .banner-overlay
+        .img-wrapper
+            .img(class="img-ratio ratio:pt-[960_1920]")
+                +PugImg()
+
+    .container
+        .section-wrapper.section-py
+            .section-sustainability-top(class="relative flex-center flex-col gap-12 -mt-60 mb-11 z-2")
+                .section-sustainability-left(class="flex-1 text-center" data-aos="fade-up")
+                    .section-sustainability-title
+                        h2.text-title
+                            .text(class="text-primary-1 text-3xl md:text-4xl lg:text-5xl xl:text-7xl font-bold whitespace-nowrap uppercase")
+                                | Together We Hatch a Greener Future
+
+                .section-sustainability-right(class="w-full flex-between" data-aos="fade-up" data-aos-delay="150")
+                    .section-sustainability-subs(class="w-full")
+                        p.text-subs
+                            .text(class="heading-3 text-Utility-black font-bold")
+                                | Register your email to receive information from us.
+
+                    .section-sustainability-form(class="w-full")
+                        //- .section-sustainability-form-wrap
+                        //-     input.section-sustainability-input(
+                        //-         type="email"
+                        //-         placeholder="Type your email"
+                        //-     )
+
+                        //-     button.section-sustainability-btn(type="submit")
+                        //-         | Subscribe
+
+            .section-sustainability-contact.swiper-column-auto.auto-3-column.allow-touchMove(class=`swiper-column-auto-id-2` data-aos="fade-up" data-aos-delay="300")
+                .swiper
+                    .swiper-wrapper
+                        -for(i=0;i<3;i++)
+                            .swiper-slide(data-aos="fade-up" data-aos-delay=`${i * 150}`)
+                                .section-sustainability-item(class="flex flex-col")
+                                    .section-sustainability-country(class="flex items-center gap-4 mb-8")
+                                        .img-wrapper(class="w-[14%]")
+                                            .img(class="img-ratio ratio:pt-[60_60]")
+                                                +PugImg()
+
+                                        .branch-title
+                                            p.text-branch
+                                                .text(class="heading-4 text-Utility-black font-bold")
+                                                    | BDH VIETNAM LLC
+
+                                    .section-sustainability-info(class="flex flex-col gap-6")
+                                        .info-item(class="flex gap-3")
+                                            .icon
+                                                span.material-symbols-outlined location_on
+
+                                            .content
+                                                p.text-content
+                                                    .text(class="body-3 text-Utility-gray-950")
+                                                    | Lot B3,3A, D11 Street, Thanh Thanh Cong Industrial Park,
+                                                    br
+                                                    | Trang Bang Ward, Tay Ninh Province, Vietnam
+                                        .info-item(class="flex gap-3")
+                                            .icon
+                                                span.material-symbols-outlined location_on
+
+                                            .content
+                                                p.text-content
+                                                    .text(class="body-3 text-Utility-gray-950")
+                                                    | info.vietnam@belgaasia.com
+                                        .info-item(class="flex gap-3")
+                                            .icon
+                                                span.material-symbols-outlined location_on
+
+                                            .content
+                                                p.text-content
+                                                    .text(class="body-3 text-Utility-gray-950")
+                                                    | Bel Gà Vietnam
+
+                .btn.btn-wrapper
+                    +ArrowButton(class="btn-left")
+                    +ArrowButton(class="btn-right rotate-180")

@@ -1,0 +1,44 @@
+section.home-banner
+    .banner-video.relative(
+        data-aos="fade-in"
+        data-aos-duration="1000"
+    )
+        .swiper-container.swiper-column-auto.allow-touchMove
+            .swiper
+                .swiper-wrapper
+                    -for(i=0;i<4;i++)
+                        .swiper-slide.item
+                            .item-video
+                                .video-wrapper
+                                    video(
+                                        autoplay
+                                        muted
+                                        loop
+                                        playsinline
+                                        preload="auto"
+                                    )
+                                        source(src="./img/banner.mp4" type="video/mp4")
+
+    .btn.btn-wrapper(
+        data-aos="fade-in"
+        data-aos-delay="500"
+        data-aos-duration="800"
+    )
+        +ArrowButton(class="btn-left")
+        +ArrowButton(class="btn-right rotate-180")
+
+    .banner-content(class="relative flex-center text-center px-4 xl:px-44 -mt-60 md:-mt-28 lg:-mt-20 xl:-mt-50 mb-10 z-1"
+        data-aos="fade-up"
+        data-aos-delay="300"
+        data-aos-duration="1000"
+    )
+        h1.text-title
+            .text(class="text-4xl lg:text-6xl xl:text-7xl text-primary-1 font-bold")
+                | THE LEADING SUPPLIER OF DAY OLD CHICKS
+                br
+                | AND DAY OLD LAYERS IN ASIA
+
+    .btn-container(class="w-full h-20 flex-center")
+        .btn
+            .btn-scroll
+                .scroll

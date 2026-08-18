@@ -1,53 +1,117 @@
 section.about-processes.section-py
     .container
         .section-wrapper
-            .row
+            .row.items-center
+
+                //- ==========================================================
+                //- PROCESS SLIDER
+                //- ==========================================================
                 .col-lg-7
-                    .about-processes-swiper.swiper-column-auto.allow-touchMove(class="relative")
+                    .about-processes-swiper.swiper-column-auto.swiper-loop.allow-touchMove.relative
                         .swiper
                             .swiper-wrapper
-                                -for(i=0;i<4;i++)
-                                    .swiper-slide.item
-                                        .item-img
-                                            .img-wrapper
-                                                .img(class="img-ratio ratio:pt-[616_616]")
-                                                    +PugImg()
+                                -for(i=0;i<5;i++)
+                                    .swiper-slide.process-slide(
+                                        data-index=i
+                                    )
+                                        .process-slide__inner
+                                            .item-img
+                                                .img-wrapper
+                                                    .img(class="img-ratio ratio:pt-[616_616]")
+                                                        +PugImg()
+
+
+                //- ==========================================================
+                //- PROCESS LIST
+                //- ==========================================================
                 .col-lg-5
                     .processes-list
-                        -for(i=0;i<5;i++)
 
-                            .process-item(
-                                class=i === 0 ? 'active' : ''
-                                data-index=i
-                            )
+                        //- ==================================================
+                        //- 01
+                        //- ==================================================
+                        .process-item.active(
+                            data-index="0"
+                        )
+                            .process-item__header
+                                span.process-item__icon
+                                    | −
 
-                                .process-item__header
+                                span.process-item__title
+                                    | Premium Genetics
 
-                                    span.process-item__icon
-                                        = i === 0 ? '-' : '+'
+                            .process-item__content
+                                p
+                                    | A key strength of Bel Ga Asia lies in its access to world-class genetics through strategic partnerships with Aviagen and Hendrix Genetics. By utilizing internationally recognized parent stock genetics, we provide high-performance day-old chicks and day-old layers with outstanding health, uniformity, growth performance, and productivity. Supported by integrated production systems and rigorous quality control processes, our day-old chicks and day-old layers provide a strong foundation for poultry producers to achieve optimal flock performance and maximize their production potential.
 
-                                    span.process-item__title
-                                        if i === 0
-                                            | Premium Genetics
-                                        else if i === 1
-                                            | State-of-the-Art Hatchery
-                                        else if i === 2
-                                            | State of the Art Parent Stock Farm
-                                        else if i === 3
-                                            | Biosecurity and animal welfare
-                                        else
-                                            | Innovation and Sustainability
 
-                                .process-item__content
+                        //- ==================================================
+                        //- 02
+                        //- ==================================================
+                        .process-item(
+                            data-index="1"
+                        )
+                            .process-item__header
+                                span.process-item__icon
+                                    | +
 
-                                    p
-                                        if i === 0
-                                            | A key strength of Bel Ga Asia lies in its access to world-class genetics through strategic partnerships with Aviagen and Hendrix Genetics.
-                                        else if i === 1
-                                            | Content for State-of-the-Art Hatchery.
-                                        else if i === 2
-                                            | Content for State of the Art Parent Stock Farm.
-                                        else if i === 3
-                                            | Content for Biosecurity and animal welfare.
-                                        else
-                                            | Content for Innovation and Sustainability.
+                                span.process-item__title
+                                    | State-of-the-Art Hatchery
+
+                            .process-item__content
+                                p
+                                    | Content for State-of-the-Art Hatchery.
+
+
+                        //- ==================================================
+                        //- 03
+                        //- ==================================================
+                        .process-item(
+                            data-index="2"
+                        )
+                            .process-item__header
+                                span.process-item__icon
+                                    | +
+
+                                span.process-item__title
+                                    | State of the Art Parent Stock Farm
+
+                            .process-item__content
+                                p
+                                    | Content for State of the Art Parent Stock Farm.
+
+
+                        //- ==================================================
+                        //- 04
+                        //- ==================================================
+                        .process-item(
+                            data-index="3"
+                        )
+                            .process-item__header
+                                span.process-item__icon
+                                    | +
+
+                                span.process-item__title
+                                    | Biosecurity and animal welfare
+
+                            .process-item__content
+                                p
+                                    | Content for Biosecurity and animal welfare.
+
+
+                        //- ==================================================
+                        //- 05
+                        //- ==================================================
+                        .process-item(
+                            data-index="4"
+                        )
+                            .process-item__header
+                                span.process-item__icon
+                                    | +
+
+                                span.process-item__title
+                                    | Innovation and Sustainability
+
+                            .process-item__content
+                                p
+                                    | Content for Innovation and Sustainability.

@@ -139,3 +139,9 @@ mixin PageBanner(title)
                     .text(class="heading-1 text-primary-1 text-center font-bold font-primary")
                         = title
 
+mixin Pagination()
+    .pagination(class=[attributes.class])
+        ul.pagination-list 
+            -for(let i=0;i<3;i++)
+                li.pagination-item 
+                    a(href="#!") #{i+1}

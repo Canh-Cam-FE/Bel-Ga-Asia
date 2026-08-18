@@ -1,0 +1,93 @@
+.environment-performance
+    --spacing: 40px
+    .grid
+        @apply grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 items-stretch rem:gap-[calc(var(--spacing)*2)]
+    .item-container
+        @apply flex-center h-full
+
+        .item-text
+            @apply w-full
+            .text-desc
+                @apply relative
+
+        &:not(:last-child)
+            .item-text
+                .text-desc
+                    &::before
+                        content: ""
+                        @apply absolute w-0.25 h-full top-0 right-0 rem:translate-x-[var(--spacing)] bg-primary-3
+
+    .container
+        .section-wrapper
+            @apply flex flex-col gap-8
+
+        .section-title
+            @apply flex flex-col gap-3
+
+        .table-container
+            @apply w-full flex flex-col gap-4 mt-10 p-4 md:p-8 rounded-[32px] bg-[rgba(255,255,255,0.75)] shadow-[0_12px_30px_0_#FFF4DD]
+
+            .table-title
+                @apply mb-2
+
+            .section-table
+                @apply w-full overflow-x-auto
+
+                table
+                    @apply w-full border-collapse
+
+                    tbody
+                        tr
+                            @apply h-[57px]
+
+                            td
+                                @apply py-3 text-base leading-[140%]
+
+                                &:first-child
+                                    @apply w-[9.5%] pl-4 md:pl-4 text-left text-[#111] font-normal
+
+                                &:nth-child(2)
+                                    @apply w-[50%] text-left text-[#111] font-normal
+
+                                &:nth-child(3)
+                                    @apply w-[25%] text-left text-[#888] font-normal
+
+                                &:last-child
+                                    @apply w-[12%] pr-4 md:pr-4
+
+                            &:nth-child(even)
+                                @apply bg-[#FBF3E2]
+
+                            &:first-child
+                                td
+                                    &:first-child
+                                        @apply rounded-tl-none
+
+                                    &:last-child
+                                        @apply rounded-tr-none
+
+                            &:last-child
+                                td
+                                    &:first-child
+                                        @apply rounded-bl-none
+
+                                    &:last-child
+                                        @apply rounded-br-none
+
+                            .table-actions
+                                @apply flex items-center justify-end gap-2
+
+                                a
+                                    @apply flex-center text-primary-2 transition-all duration-300
+
+                                    &:hover
+                                        @apply opacity-70
+
+                                    .material-symbols-outlined
+                                        @apply text-[20px] font-normal
+
+                                    .download
+                                        @apply text-[20px]
+
+                                    .visibility
+                                        @apply text-[20px]

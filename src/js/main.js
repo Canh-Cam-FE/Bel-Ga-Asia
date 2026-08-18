@@ -6,6 +6,8 @@ import {
   buttonToTop,
   menuSpy,
   stickElementToEdge,
+  newsCategoryFilter,
+  countUpInit,
 } from "./helper";
 import { header } from "./header";
 import { swiperInit } from "./swiper";
@@ -14,9 +16,11 @@ $(document).ready(function () {
   setHoverBackgroundElement();
   stickElementToEdge();
   menuSpy();
+  countUpInit();
   buttonToTop();
   header.init();
   swiperInit();
+  newsCategoryFilter();
 });
 
 /*==================== Aos Init ====================*/

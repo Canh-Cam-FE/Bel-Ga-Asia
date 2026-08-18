@@ -1,3 +1,5 @@
+import { CountUp } from "countup.js";
+
 export function setBackgroundElement() {
   $("[setBackground]").each(function () {
     var background = $(this).attr("setBackground");
@@ -233,33 +235,42 @@ export function indicatorSlide() {
 
 export function countUpInit() {
   const countUpElements = document.querySelectorAll(".countup");
-  let countUp;
+  const countUps = [];
+
   countUpElements.forEach((element) => {
     const targetNumber = element.getAttribute("data-number");
-    // Check if number is decimal values
-    const is_decimal = targetNumber?.includes(".");
-    countUp = new CountUp(element, targetNumber, {
+
+    if (!targetNumber) return;
+
+    const is_decimal = targetNumber.includes(".");
+
+    const countUp = new CountUp(element, targetNumber, {
       duration: 4,
       separator: ".",
       decimal: ",",
       enableScrollSpy: true,
+      scrollSpyOnce: true,
       decimalPlaces: is_decimal ? 2 : 0,
     });
+
     if (!countUp.error) {
       countUp.start();
+      countUps.push(countUp);
     } else {
       console.error(countUp.error);
     }
   });
+
   return {
     reset: () => {
-      countUp.reset();
+      countUps.forEach((countUp) => countUp.reset());
     },
     start: () => {
-      countUp.start();
+      countUps.forEach((countUp) => countUp.start());
     },
   };
 }
+
 export function stickElementToEdge() {
   var target = $("[stick-to-edge]");
   target.each(function () {
@@ -318,5 +329,55 @@ export function menuSpy() {
         isActive = false;
       }, 1000);
     },
+  });
+}
+
+export function newsCategoryFilter() {
+  const sections = $(".home-news");
+
+  if (!sections.length) return;
+
+  sections.each(function () {
+    const $section = $(this);
+    const $categoryItems = $section.find(".category-list .item");
+    const swiperElement = $section.find(".section-news-slider .swiper")[0];
+
+    if (!$categoryItems.length || !swiperElement?.swiper) return;
+
+    const swiper = swiperElement.swiper;
+
+    $categoryItems.on("click", function (event) {
+      event.preventDefault();
+
+      const $this = $(this);
+      const category = $this.attr("data-category");
+
+      // Active category
+      $categoryItems.removeClass("active");
+      $this.addClass("active");
+
+      // Filter slide
+      $section.find(".section-news-slider .swiper-slide").each(function () {
+        const $slide = $(this);
+        const country = $slide.attr("data-country");
+
+        if (category === "All" || country === category) {
+          $slide.removeClass("is-hidden");
+        } else {
+          $slide.addClass("is-hidden");
+        }
+      });
+
+      // Update Swiper
+      swiper.update();
+
+      // Reset về slide đầu tiên
+      swiper.slideTo(0, 0);
+
+      // Update navigation
+      if (swiper.navigation) {
+        swiper.navigation.update();
+      }
+    });
   });
 }

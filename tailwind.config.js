@@ -486,7 +486,8 @@ module.exports = {
       },
       boxShadow: {
         number: "4px 4px 5px rgba(0, 0, 0, 0.15)",
-        1: " 0px 0px 10px rgb(170 4 54)",
+        1: "0px 4px 4px 0 rgba(31, 34, 39, 0.08)",
+        4: "0 8px 32px 0 rgba(0, 0, 0, 0.08)",
         "dropshadow-light": "4px 4px 32px 16px rgba(0,0,0,0.08)",
         "dropshadow-medium": "4px 4px 8px 4px rgba(0,0,0,0.24)",
         "dropshadow-hard": "8px 8px 16px 8px rgba(0,0,0,0.4)",
@@ -647,7 +648,7 @@ module.exports = {
         },
 
         ".heading-1-60": {
-          fontSize: "48px", // 4xl
+          fontSize: "36px", // 4xl
           [`@media (min-width: ${theme("screens.lg")})`]: {
             fontSize: "calc(52/1920*100rem)", // 6xl
           },

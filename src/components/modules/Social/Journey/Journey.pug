@@ -1,0 +1,54 @@
+section.social-journey(class="relative pb-20")
+    .container
+        .section-wrapper(class="flex-center flex-col gap-6")
+            .section-header(class="flex-center flex-col gap-6")
+                .section-title
+                    h2.text-title
+                        .text(class="heading-1-subpage text-primary-4 font-bold uppercase")
+                            | OUR JOURNY OF NURTURING FUTURE GENERATION
+
+                .section-desc
+                    p.text-desc
+                        .text(class="body-1 text-Utility-gray-950 text-justify")
+                            | At Bel Ga Asia, we are committed to investing in future talent. Through educational partnerships, career development opportunities, and industry engagement, we help equip the next generation with the knowledge, skills, and inspiration needed to build a sustainable poultry industry for the future.
+
+            .section-content(class="flex-center flex-col gap-6")
+                .category
+                    ul.category-list(class="flex flex-wrap gap-5")
+                        each item, i in ['All', 'Vietnam', 'Cambodia', 'Myanmar']
+                            li.list-item(class="flex-center")
+                                a.item(class=i===0 ? 'active' : '')= item
+
+                .section-news-slider.swiper-column-auto.auto-3-column.allow-touchMove(class=`swiper-column-auto-id-2`)
+                    .swiper
+                        .swiper-wrapper
+                            -for(i=0;i<3;i++)
+                                .swiper-slide
+                                    .news-card(class="h-full flex flex-col bg-Utility-white rounded-3 overflow-hidden")
+                                        .card-img
+                                            .img-wrapper
+                                                .img(class="img-ratio ratio:pt-[280_440]")
+                                                    +PugImg()
+
+                                        .card-content
+                                            .card-meta
+                                                p.country
+                                                    .text(class="body-3 text-primary-1")
+                                                        | Vietnam
+
+                                            .card-title
+                                                h3.text-title
+                                                    .text(class="heading-3 text-primary-1 font-bold")
+                                                        | Talent Management and Retention Program
+
+                    .swiper-button-wrapper
+                        .btn-prev
+                            +ArrowButton()
+                        .btn-next
+                            +ArrowButton()(class="rotate-180")
+
+
+                .section-slogan
+                    p.text-slogan
+                        .text(class="heading-3 text-primary-3 font-bold text-justify whitespace-nowrap")
+                            | JOIN BEL GA ASIA AND BE PART OF OUR JOURNEY TO HATCH A SUSTAINABLE POULTRY INDUSTRY FOR FUTURE GENERATIONS

@@ -1,0 +1,34 @@
+section.home-overview(class="pb-10" data-aos="fade-up")
+    .container
+        .section-wrapper(class="flex flex-col gap-10")
+            .section-title(data-aos="fade-up")
+                h2.text-title
+                    .text(class="heading-1-60 text-primary-4 font-bold uppercase text-center")
+                        | Overview
+
+            .section-content
+                .row(class="flex-between")
+                    .col-lg-5
+                        .overview-stats(class="flex flex-col justify-center gap-6" data-aos="fade-right")
+                            -for(i=0;i<4;i++)
+                                .overview-stat(class="flex items-start gap-3 pb-5 border-b border-primary-4" data-aos="fade-up" data-aos-delay=i*100)
+                                    .overview-number(class="w-[22%]")
+                                        p.text-number
+                                            .text.countup(class="text-64 text-primary-3 font-black" data-number="14")
+                                                | 14
+
+                                    .overview-info(class="flex flex-col justify-center gap-3")
+                                        p.text-title
+                                            .text(class="heading-4 text-primary-1 font-bold")
+                                                | COUNTRIES
+
+                                        p.text-desc
+                                            .text(class="body-2 text-Utility-gray-950")
+                                                | Operating in Vietnam, Myanmar, and Cambodia.
+
+                            .btn.btn-more(class="flex" data-aos="fade-up" data-aos-delay="400")
+                                +ButtonMore()
+
+                    .col-lg-6
+                        .overview-map.img-ratio.ratio-4-3(data-aos="fade-down")
+                            +PugImg("./img/Overview.png")

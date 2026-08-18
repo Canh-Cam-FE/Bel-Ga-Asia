@@ -1,0 +1,107 @@
+-
+    const newsItems = [
+        {
+            image: "./img/news-1.jpg",
+            country: "Vietnam",
+            date: "May 22, 2026",
+            title: "Bel Gà, De Heus, TTC Energy and Hung Nhon - Join Forces to Scales Up Solar Energy Development",
+        },
+        {
+            image: "./img/news-2.jpg",
+            country: "Cambodia",
+            date: "May 22, 2026",
+            title: "Grand Opening - Thmey Khmer Hatchery",
+        },
+        {
+            image: "./img/news-3.jpg",
+            country: "Vietnam",
+            date: "May 22, 2026",
+            title: "Internal Opening Ceremony of Tay Ninh Hatchery Extension",
+        },
+    ]
+
+section.home-news.pb-20
+    .container
+        .section-wrapper(
+            class="relative flex flex-col gap-10"
+            data-aos="fade-up"
+        )
+            .section-header(
+                class="flex flex-col gap-10"
+                data-aos="fade-up"
+            )
+                .section-title
+                    h2.text-title
+                        .text(
+                            class="heading-1 text-primary-4 font-bold uppercase text-center"
+                        )
+                            | NEWS
+
+                .category
+                    ul.category-list.flex-center.flex-wrap.gap-5
+                        each item, i in ['All', 'Vietnam', 'Cambodia', 'Myanmar']
+                            li.list-item.flex.items-center
+                                a.item(
+                                    href="javascript:void(0)"
+                                    class=i === 0 ? 'active' : ''
+                                    data-category=item
+                                )= item
+
+            .section-news-slider.swiper-column-auto.auto-3-column.allow-touchMove.swiper-column-auto-id-1(
+                data-aos="fade-up"
+                data-aos-delay="150"
+            )
+                .swiper
+                    .swiper-wrapper
+                        each item, i in newsItems
+                            .swiper-slide(
+                                data-country=item.country
+                                data-aos="fade-up"
+                                data-aos-delay=`${i * 150}`
+                            )
+                                .news-card(
+                                    class="h-full flex flex-col bg-Utility-white rounded-5 overflow-hidden"
+                                )
+                                    .card-img
+                                        .img-wrapper.overflow-hidden
+                                            .img(class="img-ratio ratio:pt-[280_440]")
+                                                +PugImg()
+
+                                    .card-content
+                                        .news-meta
+                                            .country
+                                                p.text-country
+                                                    .text(class="body-3 text-primary-1")
+                                                        = item.country
+
+                                            .date
+                                                p.text-date
+                                                    .text
+                                                        = item.date
+
+                                        .card-title(class="flex-1")
+                                            h2.text-title
+                                                .text(
+                                                    class="heading-3 text-primary-1 font-bold"
+                                                )
+                                                    = item.title
+
+                                        .section-news-link
+                                            p.text-link
+                                                .text(class="body-3 text-primary-1")
+                                                    | Read more
+                                            i.fa-light.fa-arrow-right
+
+                .swiper-button-wrapper
+                    .btn-prev
+                        +ArrowButton()
+
+                    .btn-next
+                        +ArrowButton()(class="rotate-180")
+
+        .btn(
+            class="flex-center text-center mt-12"
+            data-aos="fade-up"
+            data-aos-delay="300"
+        )
+            +ButtonMore("VIEW ALL")

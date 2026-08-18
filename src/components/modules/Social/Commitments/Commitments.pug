@@ -1,0 +1,32 @@
+section.social-commitments(class="relative z-2")
+    .container
+        .section-wrapper(class="flex-center flex-col gap-6")
+            .section-heading
+                h2.heading
+                    .text(class="heading-1-subpage text-primary-4 text-center font-bold")
+                        | OUR COMMITMENTS
+
+            .section-desc
+                p.desc
+                    .text(class="body-1 text-Utility-gray-950 font-primary")
+                        | Our commitment goes beyond poultry production. We believe people are at the heart of a sustainable poultry industry. By empowering our people, strengthening communities, and nurturing future generations, we strive to create lasting positive impact wherever we operate.
+
+            .section-content
+                .grid
+                    -for(i=0;i<3;i++)
+                        .item-container
+                            .item-content(class="flex-center flex-col gap-4 md:gap-5 w-full h-full")
+                                .item-img(class="w-[24.21%]")
+                                    .img(class="img-ratio aspect-square")
+                                        +PugImg()
+
+                                .item-text(class="flex-center flex-col flex-1 gap-3")
+                                    .text-title
+                                        h3.title
+                                            .text(class="heading-4 text-primary-1 font-bold")
+                                                | People
+
+                                    .text-desc(class="flex-1 px-10")
+                                        p.desc
+                                            .text(class="body-2 text-Utility-gray-950 text-justify")
+                                                | Creating opportunities through employment, development and well-being.

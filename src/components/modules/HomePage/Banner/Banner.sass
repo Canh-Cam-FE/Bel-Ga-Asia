@@ -1,0 +1,27 @@
+.home-banner
+    @apply relative
+
+    .banner-video
+        @apply relative w-full overflow-hidden
+
+        .video-wrapper
+            aspect-ratio: 960 / 1920
+            @screen md
+                aspect-ratio: 1920 / 960
+
+        video
+            @apply w-full h-full object-cover block
+
+        &::after
+            content: ""
+            @apply absolute left-0 right-0 bottom-0 pointer-events-none z-1
+            @apply rem:h-[380px] bg-[linear-gradient(180deg,rgba(255,244,218,0.00)_0%,#FFF4DA_55.79%)]
+
+    .btn-wrapper
+        @apply absolute w-full flex-between top-1/2 pointer-events-none z-1
+
+        .btn-left
+            @apply absolute left-4 xl:left-12 pointer-events-auto
+
+        .btn-right
+            @apply absolute right-4 xl:right-10 pointer-events-auto

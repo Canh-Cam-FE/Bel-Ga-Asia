@@ -11,14 +11,14 @@
             @apply absolute animate-spin
 
     .btn-scroll
-        @apply relative w-6 h-10 rounded-8
+        @apply relative w-6 h-9 rounded-8
         @apply flex justify-center bg-transparent border-none outline outline-1 outline-primary-3 shadow-1
         .scroll
             @apply w-2 h-2 rounded-1 bg-primary-3
-            @apply translate-y-[60%] btn-scroll-animation
+            @apply translate-y-[55%] btn-scroll-animation
 
     .btn-discover
-        @apply relative flex-center p-1 rounded-full border-2 border-primary-3 bg-transparent
+        @apply relative flex-center p-1 pl-4 rounded-full border border-primary-3 bg-transparent
         @apply transition-all duration-300 ease-in-out
 
         &__text
@@ -40,12 +40,12 @@
                 @apply bg-primary-4 text-primary-3
 
 .btn-search
-    @apply relative px-3.75 py-2.25 flex-center rounded-5 border border-primary-3
+    @apply relative xl:px-3.75 py-2.25 flex-center rounded-5 border border-primary-3
     @apply text-xl text-primary-3 font-awesome
     @apply transition-all duration-300
 
     &:hover
-        @apply bg-primary-3 text-Utility-white
+        @apply xl:bg-primary-3 xl:text-Utility-white
 
 .btn-language
     @apply relative px-4 py-2.25 flex-center gap-1 rounded-5 border border-Utility-black
@@ -56,7 +56,7 @@
         @apply bg-Utility-black/50 text-Utility-white
 
 .btn-arrow
-    @apply relative block w-13 h-13 m-0 overflow-hidden border-0 bg-transparent cursor-pointer
+    @apply relative block w-17 h-17 m-0 overflow-hidden border-0 bg-transparent cursor-pointer
 
     &::before,
     &::after
@@ -78,7 +78,7 @@
             @apply opacity-100 scale-100 btn-arrow-before-transition
 
         .btn-arrow-box
-            @apply -translate-x-13
+            @apply -translate-x-17
 
         .material-symbols-outlined
             @apply text-primary-4
@@ -87,7 +87,7 @@
         @apply absolute top-0 left-0 flex z-1 btn-arrow-box-transition
 
     &-element
-        @apply flex-center w-13 h-13 shrink-0
+        @apply flex-center w-17 h-17 shrink-0
 
         .material-symbols-outlined
             @apply text-primary-1 leading-none rotate-180 transition-colors duration-300 z-2

@@ -1,0 +1,46 @@
+-
+    const products = [
+        {
+            tag: 'Day-Old Chicks (DOCs)',
+            tagIcon: 'egg',
+            title: 'ROSS 308',
+            desc: 'The Ross 308 broiler performs consistently well and has the versatility to meet a broad range of customer requirements from Aviagen',
+            features: [
+                { icon: 'trending_up', label: 'High Performance' },
+                { icon: 'workspace_premium', label: 'Excellent Growth' },
+                { icon: 'shield', label: 'Strong Livability' },
+                { icon: 'public', label: 'Global Proven Genetics' },
+            ],
+            link: '#',
+        },
+        {
+            tag: 'Day-Old Layers (DOLs)',
+            tagIcon: 'egg',
+            title: 'BOVANS BROWN',
+            desc: 'The Bovan Brown is a versatile and robust laying hen, offering high peak production, great persistency and consistency egg quality from breeding company Hendrix Genetics',
+            features: [
+                { icon: 'egg', label: 'Superior Production' },
+                { icon: 'monitoring', label: 'Feed Efficiency' },
+                { icon: 'health_and_safety', label: 'Strong Livability' },
+                { icon: 'flutter_dash', label: 'Brown Egg Quality' },
+            ],
+            link: '#',
+        },
+    ]
+
+
+section.home-products
+    .container
+        .section-wrapper(class="flex-center flex-col gap-10" data-aos="fade-up")
+            .section-title
+                h2.text-title
+                    .text(class="heading-1-60 text-primary-4 font-bold uppercase" data-aos="fade-up")
+                        | Our Products
+
+            .row
+                each product, index in products
+                    .col-lg-6(
+                        data-aos="fade-up"
+                        data-aos-delay=(index * 150)
+                    )
+                        +ProductCard(product)

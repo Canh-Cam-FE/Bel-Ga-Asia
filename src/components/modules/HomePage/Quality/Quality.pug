@@ -1,0 +1,65 @@
+section.homepage-quality.section-py
+    .container
+        .section-wrapper(
+            class="flex-center flex-col gap-6 lg:gap-13"
+            data-aos="fade-up"
+            data-aos-duration="800"
+            data-aos-offset="100"
+        )
+            .section-title(
+                class="flex-center flex-col gap-6"
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-offset="100"
+            )
+                h2.text-title(
+                    data-aos="fade-up"
+                    data-aos-duration="800"
+                    data-aos-offset="100"
+                )
+                    .text(
+                        class="heading-1-60 text-primary-4 font-bold uppercase text-center"
+                    )
+                        | Quality Chicks, Healthy Life
+
+                p.text-desc(
+                    data-aos="fade-up"
+                    data-aos-delay="200"
+                    data-aos-duration="800"
+                    data-aos-offset="100"
+                )
+                    .desc(
+                        class="body-1 text-Utility-gray-950 text-center"
+                    )
+                        | At 
+                        span(
+                            class="body-1 text-primary-1"
+                        ) Bel Ga Asia,
+                        | we provide premium quality Day-Old-Chicks and Day-Old-Layers 
+                        | and integrated solutions that help farms across Asia maximize productivity and performance
+
+            .content(
+                class="flex-center flex-col gap-4 lg:gap-9"
+                data-aos="fade-up"
+                data-aos-duration="800"
+                data-aos-offset="100"
+            )
+                .grid
+                    -for(i=0;i<8;i++)
+                        .item-container(
+                            class="flex"
+                            data-aos="fade-up"
+                            data-aos-delay=`${300 + i * 100}`
+                            data-aos-duration="700"
+                            data-aos-offset="80"
+                        )
+                            +IconBox('verified_user', 'BIOSECUTITY', 'Implemented higher standards to guarantee healthy and strong Day- Old Chicks')
+
+                .btn(
+                    class="text-center"
+                    data-aos="fade-up"
+                    data-aos-delay="1100"
+                    data-aos-duration="800"
+                    data-aos-offset="80"
+                )
+                    +ButtonMore()

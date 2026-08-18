@@ -1,0 +1,15 @@
+.homepage-quality
+    --spacing: 40px
+    .grid
+        @apply grid-cols-1 md:grid-cols-2 xl:grid-cols-4 items-stretch rem:gap-x-[calc(var(--spacing)*2)] gap-y-10
+    .item-container
+        @apply relative flex-center h-full
+
+        &:not(:last-child)
+            &::before
+                content: ""
+                @apply hidden md:block absolute w-0.25 h-full top-0 right-0 rem:translate-x-[var(--spacing)] bg-primary-4
+
+        &:nth-child(even)
+            &::before
+                @apply md:hidden lg:block
