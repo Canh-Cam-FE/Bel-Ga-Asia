@@ -37,7 +37,10 @@ section.home-news.pb-20
                         )
                             | NEWS
 
-                .category
+                .category(
+                    data-category-filter
+                    data-filter-target=".section-news-slider"
+                )
                     ul.category-list.flex-center.flex-wrap.gap-5
                         each item, i in ['All', 'Vietnam', 'Cambodia', 'Myanmar']
                             li.list-item.flex.items-center
@@ -55,7 +58,7 @@ section.home-news.pb-20
                     .swiper-wrapper
                         each item, i in newsItems
                             .swiper-slide(
-                                data-country=item.country
+                                data-filter=item.country
                                 data-aos="fade-up"
                                 data-aos-delay=`${i * 150}`
                             )

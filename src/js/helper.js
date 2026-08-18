@@ -332,51 +332,55 @@ export function menuSpy() {
   });
 }
 
-export function newsCategoryFilter() {
-  const sections = $(".home-news");
+export function initCategoryFilter() {
+  $("[data-category-filter]").each(function () {
+    const $filter = $(this);
+    const targetSelector = $filter.attr("data-filter-target");
 
-  if (!sections.length) return;
+    if (!targetSelector) return;
 
-  sections.each(function () {
-    const $section = $(this);
-    const $categoryItems = $section.find(".category-list .item");
-    const swiperElement = $section.find(".section-news-slider .swiper")[0];
+    const $target = $(targetSelector);
 
-    if (!$categoryItems.length || !swiperElement?.swiper) return;
+    if (!$target.length) return;
 
-    const swiper = swiperElement.swiper;
+    const $items = $filter.find("[data-category]");
 
-    $categoryItems.on("click", function (event) {
+    if (!$items.length) return;
+
+    $items.on("click", function (event) {
       event.preventDefault();
 
       const $this = $(this);
       const category = $this.attr("data-category");
 
-      // Active category
-      $categoryItems.removeClass("active");
+      // Active tab
+      $items.removeClass("active");
       $this.addClass("active");
 
-      // Filter slide
-      $section.find(".section-news-slider .swiper-slide").each(function () {
-        const $slide = $(this);
-        const country = $slide.attr("data-country");
+      // Filter target items
+      $target.find("[data-filter]").each(function () {
+        const $item = $(this);
+        const itemCategory = $item.attr("data-filter");
 
-        if (category === "All" || country === category) {
-          $slide.removeClass("is-hidden");
+        if (category === "All" || itemCategory === category) {
+          $item.removeClass("is-hidden");
         } else {
-          $slide.addClass("is-hidden");
+          $item.addClass("is-hidden");
         }
       });
 
-      // Update Swiper
-      swiper.update();
+      // Update Swiper nếu target là Swiper
+      const swiperElement = $target.find(".swiper")[0];
 
-      // Reset về slide đầu tiên
-      swiper.slideTo(0, 0);
+      if (swiperElement?.swiper) {
+        const swiper = swiperElement.swiper;
 
-      // Update navigation
-      if (swiper.navigation) {
-        swiper.navigation.update();
+        swiper.update();
+        swiper.slideTo(0, 0);
+
+        if (swiper.navigation) {
+          swiper.navigation.update();
+        }
       }
     });
   });

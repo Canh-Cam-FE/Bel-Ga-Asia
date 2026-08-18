@@ -1,24 +1,48 @@
 section.environment-journey.pb-20
     .container
-        .section-wrapper(class="relative flex flex-col gap-10" data-aos="fade-up")
-            .section-header(class="flex flex-col gap-10" data-aos="fade-up")
+        .section-wrapper(
+            class="relative flex flex-col gap-10"
+            data-aos="fade-up"
+        )
+            .section-header(
+                class="flex flex-col gap-10"
+                data-aos="fade-up"
+            )
                 .section-title
-                    h2.text-title 
-                        .text(class="heading-1 text-primary-4 font-bold uppercase text-center")
+                    h2.text-title
+                        .text(
+                            class="heading-1 text-primary-4 font-bold uppercase text-center"
+                        )
                             | OUR JOURNEY TO REDUCE CARBON FOOTPRINT
 
-                .category
+                .category(
+                    data-category-filter
+                    data-filter-target=".section-journey-slider"
+                )
                     ul.category-list.flex-center.flex-wrap.gap-5
                         each item, i in ['All', 'Vietnam', 'Cambodia', 'Myanmar']
                             li.list-item.flex.items-center
-                                a.item(class=i===0 ? 'active' : '')= item
+                                a.item(
+                                    href="javascript:void(0)"
+                                    class=i === 0 ? 'active' : ''
+                                    data-category=item
+                                )= item
 
-            .section-news-slider.swiper-column-auto.auto-3-column.allow-touchMove(class=`swiper-column-auto-id-2` data-aos="fade-up" data-aos-delay="150")
+            .section-journey-slider.swiper-column-auto.auto-3-column.allow-touchMove.swiper-column-auto-id-2(
+                data-aos="fade-up"
+                data-aos-delay="150"
+            )
                 .swiper
                     .swiper-wrapper
                         -for(i=0;i<3;i++)
-                            .swiper-slide(data-aos="fade-up" data-aos-delay=`${i * 150}`)
-                                .news-card(class="h-full flex flex-col bg-Utility-white rounded-3 overflow-hidden")
+                            .swiper-slide(
+                                data-filter="Vietnam"
+                                data-aos="fade-up"
+                                data-aos-delay=`${i * 150}`
+                            )
+                                .news-card(
+                                    class="h-full flex flex-col bg-Utility-white rounded-3 overflow-hidden"
+                                )
                                     .card-img
                                         .img-wrapper.overflow-hidden
                                             .img(class="img-ratio ratio:pt-[280_440]")
@@ -28,26 +52,34 @@ section.environment-journey.pb-20
                                         .news-meta
                                             .country
                                                 p.text-country
-                                                    .text(class="body-3 text-primary-1")
+                                                    .text(
+                                                        class="body-3 text-primary-1"
+                                                    )
                                                         | Vietnam
 
                                         .card-title(class="flex-1")
                                             h2.text-title
-                                                .text(class="heading-3 text-primary-1 font-bold")
+                                                .text(
+                                                    class="heading-3 text-primary-1 font-bold"
+                                                )
                                                     | TAY NINH HATCHERY
 
                                         .card-desc(class="flex-between")
                                             .text-desc
-                                                .text(class="body-1 text-Utility-gray-950")
+                                                .text(
+                                                    class="body-1 text-Utility-gray-950"
+                                                )
                                                     | Capacity
+
                                             .text-desc
-                                                .text(class="body-1 text-primary-1 font-bold")
+                                                .text(
+                                                    class="body-1 text-primary-1 font-bold"
+                                                )
                                                     | 400 kWp
-
-
 
                 .swiper-button-wrapper
                     .btn-prev
                         +ArrowButton()
+
                     .btn-next
                         +ArrowButton()(class="rotate-180")

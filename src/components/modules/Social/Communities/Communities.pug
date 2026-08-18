@@ -1,49 +1,70 @@
-section.social-communities(class="relative section-py")
+section.social-communities.relative.section-py
     .container
         .section-wrapper(class="flex-center flex-col gap-6")
             .section-header(class="flex-center flex-col gap-6")
                 .section-title
                     h2.text-title
-                        .text(class="heading-1-subpage text-primary-4 font-bold uppercase")
+                        .text(
+                            class="heading-1-subpage text-primary-4 font-bold uppercase"
+                        )
                             | STRENGTHENING COMMUNITIES
 
                 .section-desc
                     p.text-desc
-                        .text(class="body-1 text-Utility-gray-950 text-justify")
+                        .text(
+                            class="body-1 text-Utility-gray-950 text-justify"
+                        )
                             | Beyond our business, we are committed to supporting the well-being and development of the communities around us. Through meaningful engagement and long-term partnerships, we contribute to stronger, more resilient communities across Asia.
 
             .section-content(class="flex-center flex-col gap-6")
-                .category
+                .category(
+                    data-category-filter
+                    data-filter-target=".section-news-slider"
+                )
                     ul.category-list(class="flex flex-wrap gap-5")
                         each item, i in ['All', 'Vietnam', 'Cambodia', 'Myanmar']
                             li.list-item(class="flex-center")
-                                a.item(class=i===0 ? 'active' : '')= item
+                                a.item(
+                                    href="javascript:void(0)"
+                                    class=i === 0 ? 'active' : ''
+                                    data-category=item
+                                )= item
 
-                .section-news-slider.swiper-column-auto.auto-3-column.allow-touchMove(class=`swiper-column-auto-id-2`)
+                .section-news-slider.swiper-column-auto.auto-3-column.allow-touchMove.swiper-column-auto-id-3
                     .swiper
                         .swiper-wrapper
                             -for(i=0;i<3;i++)
-                                .swiper-slide
-                                    .news-card(class="h-full flex flex-col bg-Utility-white rounded-3 overflow-hidden")
+                                .swiper-slide(
+                                    data-filter=i === 0 ? "Vietnam" : i === 1 ? "Cambodia" : "Myanmar"
+                                )
+                                    .news-card(
+                                        class="h-full flex flex-col bg-Utility-white rounded-3 overflow-hidden"
+                                    )
                                         .card-img
                                             .img-wrapper
-                                                .img(class="img-ratio ratio:pt-[280_440]")
+                                                .img(
+                                                    class="img-ratio ratio:pt-[280_440]"
+                                                )
                                                     +PugImg()
 
                                         .card-content
                                             .card-meta
                                                 p.country
-                                                    .text(class="body-3 text-primary-1")
-                                                        | Vietnam
+                                                    .text(
+                                                        class="body-3 text-primary-1"
+                                                    )
+                                                        = i === 0 ? "Vietnam" : i === 1 ? "Cambodia" : "Myanmar"
 
                                             .card-title
                                                 h3.text-title
-                                                    .text(class="heading-3 text-primary-1 font-bold")
+                                                    .text(
+                                                        class="heading-3 text-primary-1 font-bold"
+                                                    )
                                                         | Talent Management and Retention Program
 
                     .swiper-button-wrapper
                         .btn-prev
                             +ArrowButton()
+
                         .btn-next
                             +ArrowButton()(class="rotate-180")
-

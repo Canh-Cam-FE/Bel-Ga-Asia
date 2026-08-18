@@ -37,10 +37,14 @@ section.certificate-section(class="relative section-py bg-[linear-gradient(180de
                                         | KEY FOCUS AREAS
                             .box-item-item(class="flex gap-5")
                                 -for(i=0;i<6;i++)
-                                    .item(class="w-[15%]")
-                                        .img-wrapper
+                                    .item(class="w-[15%] flex-center flex-col gap-1")
+                                        .img-wrapper(class="w-1/2")
                                             .img(class="img-ratio aspect-square")
                                                 +PugImg()
+                                        .item-title
+                                            p.text-title
+                                                .text(class="heading-5 text-primary-1 font-bold")
+                                                    | Animal Welfare
                             .box-item-title
                                 h3.features-title
                                     .text(class="heading-3 text-primary-3 font-bold")

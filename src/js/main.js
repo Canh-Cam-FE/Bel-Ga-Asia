@@ -6,7 +6,7 @@ import {
   buttonToTop,
   menuSpy,
   stickElementToEdge,
-  newsCategoryFilter,
+  initCategoryFilter,
   countUpInit,
 } from "./helper";
 import { header } from "./header";
@@ -20,7 +20,7 @@ $(document).ready(function () {
   buttonToTop();
   header.init();
   swiperInit();
-  newsCategoryFilter();
+  initCategoryFilter();
 });
 
 /*==================== Aos Init ====================*/
