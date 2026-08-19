@@ -1,0 +1,86 @@
+section.career-detail.section(class="relative xl:pb-20 z-3 mt-40")
+    .container
+        .top
+            h1.heading-2.normal-case Tuyển dụng trợ lý Marketing
+            .grid(class="lg:grid-cols-2 gap-4 mt-10")
+                .img-wrapper
+                    .img(class="img-ratio ratio:pt-[460_680]")
+                        +PugImg()
+                .content
+                    .title(class="heading-4 font-bold text-primary-2") Tổng quan công việc
+                    .description.mt-6
+                        table
+                            tr
+                                td Vị trí  
+                                td Trợ lý Marketing
+                            tr
+                                td Chức vụ 
+                                td Nhân viên
+                            tr
+                                td Yêu cầu bằng cấp 
+                                td Cao đẳng chuyên ngành Marketing trở lên
+                            tr
+                                td Mức lương 
+                                td Thương lượng
+                            tr
+                                td Số lượng ứng tuyển 
+                                td 02
+                            tr
+                                td Địa điểm làm việc
+                                td TP. Hồ Chí Minh
+                            tr
+                                td Giới tính 
+                                td Không yêu cầu
+                            tr.deadline
+                                td Hạn nộp hồ sơ 
+                                td 04.07.2024
+        .bottom(class="xl:mt-15 mt-10")
+            .grid(class="grid-cols-12 gap-4")
+                .col-left(class="col-span-full lg:col-span-9 space-y-10")
+                    -for(i=0;i<3;i++)
+                        .box-content(class="bg-neutral-50 px-4 py-6 md:p-10")
+                            .title(class="heading-3 font-bold text-primary-2") Mô tả công việc
+                            .description(class="mt-6 [&_*+*]:mt-2")
+                                ul
+                                    li Quản trị website và biên tập các bài viết SEO, tăng lượng traffic vào website của công ty.
+                                    li Đề xuất các chiến dịch xây dựng liên kết (link), chiến dịch content marketing và sự hiện diện trên các phương tiện truyền thông xã hội để phối hợp cùng Agency.
+                                    li Đề xuất phát triển nội dung trực tuyến hấp dẫn bao gồm clickbait, diễn đàn, video, hình ảnh, blog…; theo dõi và phân tích sự thành công của nộidung đã tạo.
+                                    li Quản lý các chiến dịch marketing qua email và phương tiện truyền thông xã hội, Giám sát, đánh giá và phân tích từng chiến dịch quảng cáo để đạt tối ưu nhất.
+                .col-right(class="col-span-full lg:col-span-3")
+                    .box-apply(class="p-6 bg-neutral-50 flex flex-col sm:flex-row lg:flex-col gap-3")
+                        +btn-primary("Ứng tuyển",'w-full','<i class="fa-light fa-plus"></i>')
+                        +btn-primary("Tải hồ sơ ứng tuyển",'btn-gray w-full','<i class="fa-light fa-file-arrow-down"></i>','left')
+                    .other-jobs.mt-8
+                        .title(class="heading-4 xl:rem:text-[20px] font-bold text-white bg-primary-2 py-5 px-6") Vị trí tuyển dụng khác
+                        .list
+                            -for(i=0;i<5;i++)
+                                .item(class="p-6 border-x border-neutral-200 border-b")
+                                    .title(class="heading-4 font-bold")
+                                        a Tuyển dụng trợ lý Marketing
+                                    .deadline(class="inline-flex gap-2 inset-dynamic-screen mt-3")
+                                        span(class="text-primary-2") <i class="fa-regular fa-calendar-star"></i> Hạn nộp hồ sơ
+                                        time 04.07.2024
+
+.hidden
+    #popup-form.fancybox__content(style)
+        .heading-1-subpage.text-center.text-primary-2 Frontend developer
+        .mt-10
+        .form-wrap.grid.gap-x-6.gap-y-5(class='md:grid-cols-2 md:gap-y-8')
+            .form-group
+                input(type='text' placeholder='Họ và tên *')
+            .form-group
+                input(type='email' placeholder='Email *')
+            .form-group
+                input(type='tel' placeholder='Số điện thoại *')
+            .form-group.form-upload
+                label.file-upload-type
+                    | Tải file (rar, zip, doc, docx, pdf, <1MB)
+                    span.wpcf7-form-control-wrap(data-name='fileUpload')
+                        input.wpcf7-form-control.wpcf7-file.wpcf7-validates-as-required(size='40' accept='.rar,.zip,.doc,.docx,.pdf' aria-required='true' aria-invalid='false' type='file' name='fileUpload' tabindex='-1' data-orig-tabindex='-1')
+            .form-group.col-span-full.h-full
+                span.wpcf7-form-control-wrap(data-name='message')
+                    textarea.wpcf7-form-control.wpcf7-textarea(cols='40' rows='10' maxlength='2000' aria-invalid='false' placeholder='Nội dung' name='message')
+            .col-span-full.grid.grid-cols-2
+                .form-captcha
+                .form-submit.button.text-center.col-span-full
+                    +btn-primary("Gửi ngay",'btn-gray ml-auto')
