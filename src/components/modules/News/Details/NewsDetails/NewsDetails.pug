@@ -1,0 +1,38 @@
+section.news-detail(class="relative pt-section-base rem:pb-[160px] z-3")
+    .container 
+        .section-wrapper(class="relative -mt-60")
+            .row 
+                .col-lg-9
+                    article.article-news-detail 
+                        .header.text-center(class="pb-4 border-b border-Utility-gray-100")
+                            h1.post-title.heading-2 Benefits of Matcha vs Green Tea: What's the Difference?
+                            .post-date(class="body-4 text-Utility-gray-500 mt-3") October 29, 2025
+                        .post-content-main 
+                            .prose.prose-space-y-6(class="[&_img]:max-w-full [&_img]:rounded-5 body-3")
+                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sequi reiciendis nobis voluptatibus consequatur, eligendi accusamus, delectus est asperiores commodi veniam atque voluptates laudantium doloribus sunt tempore perspiciatis neque illo.
+                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sequi reiciendis nobis voluptatibus consequatur, eligendi accusamus, delectus est asperiores commodi veniam atque voluptates laudantium doloribus sunt tempore perspiciatis neque illo.
+                                +PugImg()
+                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sequi reiciendis nobis voluptatibus consequatur, eligendi accusamus, delectus est asperiores commodi veniam atque voluptates laudantium doloribus sunt tempore perspiciatis neque illo.
+                                p Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda sequi reiciendis nobis voluptatibus consequatur, eligendi accusamus, delectus est asperiores commodi veniam atque voluptates laudantium doloribus sunt tempore perspiciatis neque illo.
+                                +PugImg()
+                        .social-list 
+                            ul 
+                                li 
+                                    a(href="#!") 
+                                        <i class="fa-brands fa-facebook-f"></i>
+                                li 
+                                    a(href="#!") 
+                                        <i class="fa-brands fa-linkedin-in"></i>
+                        .tags
+                            .tags-title.body-3 Tags
+                            ul.tags-list 
+                                -for(let i=0;i<10;i++)
+                                    li.item 
+                                        a(href="#!") tag-#{i+1}
+                .col-lg-3
+                    aside.aside-news-related
+                        .wrap-news-related(class="lg:rem:mt-[246px]")
+                            h3.title.heading-4 Related posts
+                            .news-related-list(class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-base mt-5")
+                                -for(let i=0;i<4;i++)
+                                    +NewsItem()

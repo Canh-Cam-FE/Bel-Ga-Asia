@@ -95,6 +95,18 @@ mixin ButtonMore(text="DISCOVER MORE")
                 span.material-symbols-outlined line_end_arrow_notch
 
 
+mixin NewsItem(tag="div")
+    #{tag}.news-item.zoom-img-parent.tss-ease-500
+        .block-thumb 
+            a.thumb.zoom-media(href="#!") 
+                +PugImg()
+        .block-info 
+            .time October 29, 2025
+            h4.info-name 
+                a(href="#!") Why Choose Private Label Powdered Drink Mix for Your Brand? 
+
+
+
 mixin ProductCard(product)
     .product-card
         .card-header(class="md:rem:min-h-[380px] lg:min-h-0 xl:rem:min-h-[380px] flex flex-col items-center md:items-stretch gap-6 flex-1 md:block -md:relative")

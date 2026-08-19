@@ -784,6 +784,15 @@ module.exports = {
             paddingBottom: "calc(80/1920*100rem)",
           },
         },
+        ".pt-section-base": {
+          paddingTop: "calc(40/1920*100rem)",
+          [`@media (min-width: ${theme("screens.lg")})`]: {
+            paddingTop: "calc(60/1920*100rem)",
+          },
+          [`@media (min-width: ${theme("screens.xl")})`]: {
+            paddingTop: "calc(80/1920*100rem)",
+          },
+        },
         ".transition-all": {
           transition: "all 200ms ease",
         },
