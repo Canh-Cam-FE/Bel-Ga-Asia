@@ -56,7 +56,23 @@ mixin btn-primary(title, className, iconString, iconPosition)
         block
 
 
-
+mixin BtnPrimaryOption(opts={})
+    - 
+        const {
+        tag= "a",
+        text = "Discover more",
+        option = "btn-primary-2",
+        href = "#!",
+        appearance = "appearance-pill"||"",
+        size = "size-sm"||""
+        } = opts
+    #{tag}(href=tag === "a" ? href : null, class=["btn", option, appearance, size, attributes.class])
+        span=text
+        .block-icon 
+            if block 
+                block 
+            else 
+                i(class="fa-sharp-duotone fa-regular fa-arrow-up-right")
 
 
 mixin HeaderLanguage()

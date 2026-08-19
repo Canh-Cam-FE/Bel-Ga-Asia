@@ -1,0 +1,49 @@
+.section-contact
+    .contact
+        .wrap-img
+            .main-img
+                @apply relative lg:w-[calc(464/651*100%)]
+                .group-img
+                    @apply relative
+                .thumb-img-main
+                    @apply img-ratio ratio:pt-[2_3] lg:ratio:pt-[774_464] rem:rounded-tr-[96px] blur-[3px]
+                .vector-img
+                    @apply absolute -lg:right-[1%] lg:left-[9%] bottom-0 lg:bottom-[2%] z-2
+                    .thumb-vector
+                        img
+                            @apply max-w-[200px] md:max-w-[400px] xl:rem:max-w-[605px] h-auto object-contain
+                .title-custom
+                    @apply lg:absolute lg:right-0 lg:rem:top-[70px] -lg:flex -lg:flex-wrap -lg:gap-1 z-2 heading-1 xl:rem:text-[60px] font-bold leading-[1.15] -xl:px-3 -lg:mb-5
+                    .content-1
+                        @apply lg:text-white -lg:bg-gradient-4
+                        @screen -lg
+                            -webkit-background-clip: text
+                            -webkit-text-fill-color: transparent
+                    .content-2
+                        @apply xl:absolute xl:rem:left-[calc(100%+6px)] xl:top-0 text-primary-2 xl:w-max
+        .wrap-contact-form
+            .contact-form
+                @apply lg:rem:py-[73px]
+                .wrap-form
+                    form
+                        .wrap-inp
+                            @apply grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-6
+                            .form-group
+                                &:nth-child(n + 5)
+                                    @apply col-span-full
+                                input
+                                    @apply h-10 py-1.5
+                                select
+                                    @apply w-full py-2 bg-transparent text-primary-1 outline-none
+                                textarea
+                                    @apply px-0 py-2 h-20
+                                input,textarea
+                                    @apply w-full bg-transparent border border-t-transparent border-l-transparent border-r-transparent border-b-Utility-gray-200 outline-none rounded-[0]
+                                    &::placeholder
+                                        @apply body-1 text-Utility-gray-500
+                        .form-select-submit
+                            @apply flex flex-col gap-y-8 items-start mt-6
+                            .wpcf7-form-control-wrap
+                                @apply block w-full
+                            select
+                                @apply w-full py-2 bg-transparent text-primary-1 outline-none border-b border-Utility-gray-200

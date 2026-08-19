@@ -1,0 +1,42 @@
+section.section-contact(class="relative pt-section-base z-3 -mt-60")
+    .container 
+        .contact
+            .row 
+                .col-lg-6
+                    .wrap-img(class="lg:pr-5")
+                        .main-img 
+                            .title-custom 
+                                .content-1 GET IN TOUCH
+                                    br 
+                                    | WE’D LOVE TO
+                                .content-2  WITH US.
+                                    br
+                                    | HEAR FROM YOU!
+                            .group-img
+                                .thumb-img-main
+                                    +PugImg()
+                                .vector-img 
+                                    .thumb-vector 
+                                        +PugImg("./img/vector-contact.png")
+                .col-lg-6
+                    .wrap-contact-form(class="h-full flex flex-col justify-end")
+                        .contact-form 
+                            .title-form(class="heading-3") Need further information? Contact us.
+                            .wrap-form(class="mt-8")
+                                form(action="#!") 
+                                    .wrap-inp 
+                                        .form-group 
+                                            input(type="text" placeholder="Your Name*")
+                                        .form-group 
+                                            input(type="text" placeholder="Your Email*")
+                                        .form-group 
+                                            input(type="text" placeholder="Your Phone*")
+                                        .form-group 
+                                            input(type="text" placeholder="Your Subject*")
+                                        .form-group 
+                                            textarea(name="" placeholder="Your specific requirements*")
+                                        .form-group 
+                                            select(name="") 
+                                                option(value="") Choose the type product to receive new catalogue
+                                    .btn-wrapper(class="flex mt-6")
+                                        +ButtonMore("See more")

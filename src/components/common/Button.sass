@@ -38,6 +38,66 @@
 
             .btn-discover__icon
                 @apply bg-primary-4 text-primary-3
+    &.btn-primary-2
+        // // size
+        &.size-sm
+            @apply py-1
+        &.size-gradient-sm
+            @apply py-1 pr-1 pl-5
+        // recheck
+        @apply inline-flex items-center heading-6 gap-x-3
+        .block-icon
+            @apply flex-center w-10 h-10 rem:rounded-tl-[18px] rem:rounded-br-[18px] transition-500 text-base overflow-hidden
+            i
+                @apply transition-500 will-change-transform z-2
+        // default 
+        &:not(.appearance-pill-primary-2):not(.appearance-pill-white):not(.appearance-gradient-1)
+            @apply text-primary-1
+            .block-icon
+                @apply bg-primary-1 text-white
+            &:hover
+                @apply text-primary-2
+                .block-icon
+                    @apply bg-primary-2
+                    i
+                        @apply scale-120
+        &.appearance-pill-white
+            @apply text-white
+            .block-icon
+                @apply border border-white text-white
+            &:hover
+                @apply text-primary-4
+                .block-icon
+                    @apply border-primary-4 text-primary-4
+                    i
+                        @apply scale-120
+        &.appearance-pill-primary-2
+            @apply text-primary-2
+            .block-icon
+                @apply bg-primary-2 text-white
+            &:hover
+                .block-icon
+                    i
+                        @apply scale-120
+        &.appearance-gradient-1
+            @apply text-white bg-gradient-1 rounded-l-full rem:rounded-br-[9000px]
+            .block-icon
+                @apply relative text-white
+                &::after,&::before
+                    @apply content-[''] absolute inset-0  transition-500
+                &::after
+                    @apply bg-primary-2 opacity-0
+                &::before
+                    @apply bg-gradient-4
+            &:hover
+                @apply text-primary-2
+                .block-icon
+                    &::after
+                        @apply opacity-100
+                    &::before
+                        @apply opacity-0
+                    i
+                        @apply scale-120
 
 .btn-primary
     @apply relative isolate flex w-fit items-center px-4 py-2 gap-4
