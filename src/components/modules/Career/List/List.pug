@@ -1,0 +1,48 @@
+section.careerlist-banner
+    +PageBanner("Career")
+
+section.career-list-1.section.relative(class="relative rem:min-h-[680px] flex items-center z-3 -mt-60" setbackground="https://picsum.photos/1600/900")
+    .mask(class="absolute h-full left-0 top-0")
+    .container.relative
+        .wrapper(class="rem:max-w-[600px] w-full")
+            h2.title(class="heading-1-subpage text-primary-1") Môi trường làm việc
+            .description(class='[&_*+*]:mt-5 mt-5')
+                p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.
+                p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+
+section.career-list-2.section(class="xl:py-20")
+    .container
+        h2.heading-1-subpage.text-center(class="text-primary-1") Môi trường làm việc
+        .mt-10(class="grid grid-cols-2 lg:grid-cols-4 gap-3 md:base-gap")
+            -for(i=0;i<4;i++)
+                .item(class="py-6 sm:py-10 px-3 sm:px-5 text-center border border-neutral-200 space-y-3")
+                    .icon(class="rem:w-[70px] mx-auto")
+                        .img("",'ratio-[1/1] ratio-contain')
+                            +PugImg()
+                    .title(class="body-16 sm:subheader-20 font-bold text-primary-1") Tiêu đề
+                    .ctn(class="body-14 sm:body-16") Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s
+
+
+section.career-list-3.section(class="xl:py-20 bg-neutral-50")
+    .container
+        h2.heading-1-subpage.text-center(class="text-primary-1") Vị trí tuyển dụng
+        .description(class="text-center mt-3") Rất nhiều vị trí, công việc hấp dẫn đang chờ bạn tại TRƯỜNG THỊNH CORP
+        .mt-10
+        table.table-link
+            thead
+                tr
+                    td STT
+                    td VỊ TRÍ TUYỂN DỤNG
+                    td KHU VỰC
+                    td HẠN NỘP HỒ SƠ
+                    td 
+            tbody
+                -for(i=0;i<3;i++)
+                    tr()
+                        td(data-title="Nu") 0#{i+1}
+                        td(data-title="Recruitment position") Web Designer
+                        td(data-title="Area") Ho Chi Minh City
+                        td(data-title="Date") 04.07.2024
+                        td(data-title="Apply")
+                            +btn-primary("Apply")
+        +btn-primary("Tải thêm",'mx-auto mt-10','<i class="fa-solid fa-arrow-down"></i>')

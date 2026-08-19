@@ -39,6 +39,112 @@
             .btn-discover__icon
                 @apply bg-primary-4 text-primary-3
 
+.btn-primary
+    @apply relative isolate flex w-fit items-center px-4 py-2 gap-4
+    @apply overflow-hidden rounded-1
+    @apply bg-white
+    @apply text-neutral-950 body-16
+    @apply transition-all duration-300
+
+    &::before
+        content: ''
+        @apply absolute left-0 top-0 -z-1
+        @apply h-full w-1
+        @apply rounded-l-1
+        @apply bg-primary-2
+        @apply transition-all duration-300
+
+    i
+        @apply heading-4 xl:rem:text-[20px]
+        @apply text-primary-2
+        @apply transition-all duration-300
+
+    &:hover
+        @apply text-white
+
+        &::before
+            @apply w-full rounded-r-1
+
+        i
+            @apply translate-x-2 text-white
+
+    &:active
+        @apply scale-[0.98] shadow-sm
+
+        &::before
+            @apply bg-primary-2/90
+
+    &.btn-transparent
+        @apply border border-white bg-transparent text-white
+
+        i
+            @apply text-white
+
+        &:hover
+            @apply border-transparent
+
+    &.btn-gray
+        @apply bg-neutral-100
+
+    &.loading
+        @apply pointer-events-none
+        @apply border-transparent
+        @apply bg-[#dcdcdc]
+        @apply text-[70%] text-transparent
+        @apply animate-pulse
+
+        &::before
+            @apply bg-transparent
+
+        &::after
+            @apply opacity-100
+
+        i
+            @apply -translate-x-2 opacity-0
+
+        span
+            @apply opacity-0
+
+    &::after
+        content: ''
+        background-image: url(../img/loading.svg)
+        background-position: center
+        @apply pointer-events-none absolute
+        @apply left-1/2 top-1/2
+        @apply w-10 h-10
+        @apply -translate-x-1/2 -translate-y-1/2
+        @apply bg-contain bg-no-repeat
+        @apply opacity-0 transition-all
+
+    &.btn-expand
+        span
+            &:nth-of-type(1)
+                @apply block
+
+            &:nth-of-type(2)
+                @apply hidden
+
+        i
+            @apply transition-all
+
+        &.active
+            @apply border-primary-3
+            @apply bg-primary-3
+            @apply text-white
+
+            &::before
+                @apply opacity-0
+
+            span
+                &:nth-of-type(1)
+                    @apply hidden
+
+                &:nth-of-type(2)
+                    @apply block
+
+            i
+                @apply rotate-180
+
 .btn-search
     @apply relative xl:px-3.75 py-2.25 flex-center rounded-5 border border-primary-3
     @apply text-xl text-primary-3 font-awesome

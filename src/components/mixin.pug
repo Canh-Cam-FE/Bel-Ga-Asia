@@ -37,6 +37,26 @@ mixin HeaderMenu(menu = [], className = '')
                 li.menu-item-has-children
                     a.header-link(href="")= item
 
+mixin btn-primary(title, className, iconString, iconPosition)
+    - className = className || ''
+    - iconString = iconString || '<i class="fa-light fa-arrow-right"></i>'
+    - iconPosition = iconPosition || 'right'
+    - title = title || 'Xem thêm'
+
+    - className += ' btn-primary '
+
+    a.btn(class=className)
+        if iconPosition === 'left'
+            != unescape(iconString)
+            != unescape(title)
+        else
+            != unescape(title)
+            if iconString
+                != unescape(iconString)
+        block
+
+
+
 
 
 mixin HeaderLanguage()
