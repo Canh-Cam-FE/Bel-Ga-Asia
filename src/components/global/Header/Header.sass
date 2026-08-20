@@ -54,6 +54,20 @@ header
             ul
                 @apply flex-center gap-8
 
+                a
+                    @apply relative text-primary-1 heading-4 font-bold font-primary uppercase whitespace-nowrap
+                    @apply transition-all duration-300
+
+                    &::before
+                        content: ""
+                        @apply absolute w-2 h-2 top-0 left-1/2 -translate-y-2full bg-primary-3 rounded-full
+                        @apply opacity-0 transition-all duration-300
+
+                    &:hover
+                        @apply text-primary-3
+                        &::before
+                            @apply opacity-100
+
     .menu-right
         @apply hidden xl:flex w-[43.75%] h-full justify-end gap-10 px-5.5 rounded-r-full
         @apply bg-[linear-gradient(270deg,_#FFF_0%,_#FFF_86%,_rgba(255,255,255,.85)_92%,_rgba(255,255,255,0)_100%)]
@@ -63,19 +77,22 @@ header
             ul
                 @apply w-full flex justify-end gap-17
 
-    .header-link
-        @apply relative text-primary-1 heading-4 font-bold font-primary whitespace-nowrap
-        @apply transition-all duration-300
+                a
+                    @apply relative text-primary-1 heading-4 font-bold font-primary uppercase whitespace-nowrap
+                    @apply transition-all duration-300
 
-        &::before
-            content: ""
-            @apply absolute w-2 h-2 top-0 left-1/2 -translate-y-2full bg-primary-3 rounded-full
-            @apply opacity-0 transition-all duration-300
+                    &::before
+                        content: ""
+                        @apply absolute w-2 h-2 top-0 left-1/2 -translate-y-2full bg-primary-3 rounded-full
+                        @apply opacity-0 transition-all duration-300
 
-        &:hover
-            @apply text-primary-3
-            &::before
-                @apply opacity-100
+                    &:hover
+                        @apply text-primary-3
+                        &::before
+                            @apply opacity-100
+
+    .wpml-ls-legacy-list-horizontal
+        @apply p-0
 
     .header-hamburger
         @apply absolute top-1/2 -translate-y-1/2 right-4 flex xl:hidden z-999
